@@ -1,0 +1,67 @@
+{
+    "name": "@brew-kit/devvit",
+    "version": "0.0.0",
+    "description": "All-in-one @brew-kit package for Devvit apps: UI components, theme, server utilities, and mocks",
+    "license": "BSD-3-Clause",
+    "author": "Beach-Brews",
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/Beach-Brews/brew-kit-devvit.git",
+        "directory": "packages/devvit"
+    },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/Beach-Brews"
+        }
+    ],
+    "keywords": [
+        "devvit",
+        "reddit"
+    ],
+    "type": "module",
+    "sideEffects": [
+        "**/*.css"
+    ],
+    "exports": {
+        "./client": {
+            "types": "./dist/client.d.ts",
+            "import": "./dist/client.js"
+        },
+        "./client/theme.css": "./dist/client/theme.css",
+        "./server": {
+            "types": "./dist/server.d.ts",
+            "import": "./dist/server.js"
+        },
+        "./mock/client": {
+            "types": "./dist/mock/client.d.ts",
+            "import": "./dist/mock/client.js"
+        },
+        "./mock/server": {
+            "types": "./dist/mock/server.d.ts",
+            "import": "./dist/mock/server.js"
+        },
+        "./package.json": "./package.json"
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "vite build && tsc -p tsconfig.build.json",
+        "typecheck": "tsc --noEmit",
+        "clean": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\""
+    },
+    "dependencies": {
+        "@brew-kit/devvit-client": "0.0.0",
+        "@brew-kit/devvit-mock": "0.0.0",
+        "@brew-kit/devvit-server": "0.0.0"
+    },
+    "peerDependencies": {
+        "@devvit/web": "^0.14.0",
+        "react": "^19.0.0",
+        "tailwindcss": "^4.0.0"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}

@@ -1,0 +1,53 @@
+{
+    "name": "brew-kit-devvit",
+    "private": true,
+    "type": "module",
+    "description": "Monorepo for @brew-kit packages: reusable components and utilities for Devvit apps",
+    "license": "BSD-3-Clause",
+    "author": "Beach-Brews",
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/Beach-Brews/brew-kit-devvit.git"
+    },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/Beach-Brews"
+        }
+    ],
+    "packageManager": "npm@11.17.0",
+    "engines": {
+        "node": ">=24"
+    },
+    "workspaces": [
+        "packages/*"
+    ],
+    "scripts": {
+        "build": "turbo run build",
+        "dev": "turbo run dev",
+        "test": "turbo run test",
+        "typecheck": "turbo run typecheck",
+        "clean": "turbo run clean",
+        "lint": "eslint .",
+        "lint:fix": "eslint . --fix",
+        "format": "prettier . --write",
+        "format:check": "prettier . --check",
+        "check": "npm run format:check && npm run lint && npm run typecheck"
+    },
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "@types/node": "^22.20.5",
+        "eslint": "^10.12.0",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-react-hooks": "^7.1.1",
+        "globals": "^17.13.0",
+        "prettier": "^3.9.9",
+        "turbo": "^2.11.7",
+        "typescript": "~6.0.3",
+        "typescript-eslint": "^8.71.0",
+        "vite": "^8.3.2"
+    },
+    "allowScripts": {
+        "protobufjs@7.6.3": true
+    }
+}

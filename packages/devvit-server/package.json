@@ -1,0 +1,50 @@
+{
+    "name": "@brew-kit/devvit-server",
+    "version": "0.0.0",
+    "description": "Server-side utilities for Devvit Web apps",
+    "license": "BSD-3-Clause",
+    "author": "Beach-Brews",
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/Beach-Brews/brew-kit-devvit.git",
+        "directory": "packages/devvit-server"
+    },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/Beach-Brews"
+        }
+    ],
+    "keywords": [
+        "devvit",
+        "reddit",
+        "server"
+    ],
+    "type": "module",
+    "sideEffects": false,
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js"
+        },
+        "./package.json": "./package.json"
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "vite build && tsc -p tsconfig.build.json",
+        "dev": "vite build --watch",
+        "typecheck": "tsc --noEmit",
+        "clean": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\""
+    },
+    "peerDependencies": {
+        "@devvit/web": "^0.14.0"
+    },
+    "devDependencies": {
+        "@devvit/web": "^0.14.6"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}

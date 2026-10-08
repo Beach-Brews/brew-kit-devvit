@@ -1,0 +1,5 @@
+@import 'tailwindcss';
+@import '../src/theme.css';
+
+/* The dev server's root is dev/, so point Tailwind at the component sources too. */
+@source '../src';
