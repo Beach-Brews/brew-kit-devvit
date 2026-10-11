@@ -1,10 +1,10 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { App } from './App';
-import './dev.css';
+import { ExpandedView } from './ExpandedView';
+import '../index.css';
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
-        <App />
+        <ExpandedView />
     </StrictMode>
 );

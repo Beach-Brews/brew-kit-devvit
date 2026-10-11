@@ -27,26 +27,26 @@ export const ButtonGroup = ({
             case 'left':
                 return [
                     'flex-col overflow-y-auto px-2',
-                    'hover:border-r-3 border-r-brews-button-primary-background',
+                    'hover:border-r-3 border-r-brew-button-primary-background',
                     'border-r-3',
                 ];
             case 'right':
                 return [
                     'flex-col overflow-y-auto px-2',
-                    'hover:border-l-3 border-l-brews-button-primary-background',
+                    'hover:border-l-3 border-l-brew-button-primary-background',
                     'border-l-3',
                 ];
             case 'bottom':
                 return [
                     'w-full overflow-x-auto py-2',
-                    'hover:border-t-3 border-t-brews-button-primary-background',
+                    'hover:border-t-3 border-t-brew-button-primary-background',
                     'border-t-3',
                 ];
             case 'top':
             default:
                 return [
                     'w-full overflow-x-auto py-2',
-                    'hover:border-b-3 border-b-brews-button-primary-background',
+                    'hover:border-b-3 border-b-brew-button-primary-background',
                     'border-b-3',
                 ];
         }

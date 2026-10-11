@@ -7,13 +7,14 @@
     "scripts": {
         "build": "vite build",
         "deploy": "npm run test:types && npm run lint && devvit upload",
-        "dev": "devvit playtest",
+        "dev": "cd src/client && vite",
         "launch": "npm run deploy && devvit publish",
         "lint": "eslint 'src/**/*.{ts,tsx}'",
         "login": "devvit login",
         "prettier": "prettier --write .",
         "test:types": "tsc --build",
-        "test:unit": "node --experimental-strip-types --no-warnings=ExperimentalWarning --test \"src/**/*.test.ts\""
+        "test:unit": "node --experimental-strip-types --no-warnings=ExperimentalWarning --test \"src/**/*.test.ts\"",
+        "playtest": "devvit playtest"
     },
     "engines": {
         "node": ">=24.0.0"

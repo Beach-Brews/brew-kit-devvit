@@ -12,6 +12,10 @@ function copyTheme(): Plugin {
     return {
         name: 'brew-kit:copy-theme',
         apply: 'build',
+        buildStart() {
+            // theme.css isn't imported by any module, so watch it explicitly
+            this.addWatchFile(resolve(pkgDir, 'src/theme.css'));
+        },
         generateBundle() {
             this.emitFile({
                 type: 'asset',

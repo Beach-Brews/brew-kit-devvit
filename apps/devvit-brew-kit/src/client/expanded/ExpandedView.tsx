@@ -7,7 +7,7 @@
 
 import { DesignLanguagePage } from './DesignLanguagePage';
 
-export function App() {
+export function ExpandedView() {
     return (
         <div className="w-full h-screen overflow-auto">
             <div className="container max-w-screen-lg min-h-screen mx-auto flex flex-col justify-between relative z-0">

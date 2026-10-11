@@ -40,7 +40,7 @@
     ],
     "scripts": {
         "build": "vite build && tsc -p tsconfig.build.json",
-        "dev": "vite build --watch",
+        "dev": "vite build --watch --no-emptyOutDir",
         "typecheck": "tsc --noEmit",
         "clean": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\""
     },

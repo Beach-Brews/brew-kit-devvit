@@ -6,7 +6,10 @@
         "entrypoints": {
             "default": {
                 "inline": true,
-                "entry": "index.html"
+                "entry": "inline.html"
+            },
+            "expanded": {
+                "entry": "expanded.html"
             }
         }
     },
@@ -31,5 +34,8 @@
     "scripts": {
         "dev": "vite build --watch",
         "build": "vite build"
+    },
+    "dev": {
+        "subreddit": "beachbrewsboil"
     }
 }

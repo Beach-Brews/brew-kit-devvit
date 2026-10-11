@@ -60,8 +60,8 @@ html {
     .brew-btn-primary {
         @apply flex justify-center items-center gap-1 p-2 rounded-full cursor-pointer
     disabled:bg-secondary-background disabled:text-secondary-onbackground disabled:pointer-events-none disabled:opacity-50
-    font-bold disabled:font-normal text-brews-button-primary-onbackground
-    bg-brews-button-primary-background hover:bg-brews-button-primary-background-hovered;
+    font-bold disabled:font-normal text-brew-button-primary-onbackground
+    bg-brew-button-primary-background hover:bg-brew-button-primary-background-hovered;
     }
 
     .brew-btn-secondary {
@@ -166,19 +166,19 @@ html {
 }
 
 @theme {
-    /* === Brews Specific === */
+    /* === brew Specific === */
     --color-load-bar-color: var(--load-bar-color);
     --breakpoint-xs: 28rem; /* TODO: Is this breakpoint needed? */
     --animate-bar1: bar1 1s ease-in-out infinite;
     --animate-bar2: bar2 1s ease-in-out infinite;
     --animate-bar3: bar3 1s ease-in-out infinite;
 
-    --color-brews-primary-border: var(--brews-primary-border);
-    --color-brews-primary-border-hovered: var(--brews-primary-border-hovered);
-    --color-brews-primary-content: var(--brews-primary-content);
-    --color-brews-button-primary-background: var(--brews-button-primary-background);
-    --color-brews-button-primary-background-hovered: var(--brews-button-primary-background-hovered);
-    --color-brews-button-primary-onbackground: var(--brews-button-primary-onbackground);
+    --color-brew-primary-border: var(--brew-primary-border);
+    --color-brew-primary-border-hovered: var(--brew-primary-border-hovered);
+    --color-brew-primary-content: var(--brew-primary-content);
+    --color-brew-button-primary-background: var(--brew-button-primary-background);
+    --color-brew-button-primary-background-hovered: var(--brew-button-primary-background-hovered);
+    --color-brew-button-primary-onbackground: var(--brew-button-primary-onbackground);
 
     /* == Reddit color definitions == */
     --color-reddit-orangered: var(--reddit-orangered);
@@ -895,17 +895,17 @@ html {
     --reddit-juniperblue-dark: #06332b;
 
     --load-bar-color: var(--reddit-orangered);
-    --brews-primary-border: var(--reddit-orangered);
-    --brews-primary-border-hovered: var(--reddit-orangered-dark);
-    --brews-primary-content: var(--reddit-orangered);
-    --brews-button-primary-background: var(--reddit-orangered);
-    --brews-button-primary-background-hovered: var(--reddit-orangered-secondary);
-    --brews-button-primary-onbackground: var(--global-black);
+    --brew-primary-border: var(--reddit-orangered);
+    --brew-primary-border-hovered: var(--reddit-orangered-dark);
+    --brew-primary-content: var(--reddit-orangered);
+    --brew-button-primary-background: var(--reddit-orangered);
+    --brew-button-primary-background-hovered: var(--reddit-orangered-secondary);
+    --brew-button-primary-onbackground: var(--global-black);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --brews-primary-border-hovered: var(--reddit-orangered-secondary);
+        --brew-primary-border-hovered: var(--reddit-orangered-secondary);
 
         --global-black-white: #ffffff;
         --global-white-black: #000000;

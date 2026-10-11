@@ -25,22 +25,22 @@ export const DesignLanguagePage = () => {
             className="flex flex-col gap-4 p-4"
             style={
                 {
-                    '--brews-primary-border': `var(--reddit-${theme})`,
-                    '--brews-primary-border-hovered': `var(--reddit-${theme}-dark)`,
-                    '--brews-primary-content': `var(--reddit-${theme})`,
-                    '--brews-button-primary-background': `var(--reddit-${theme})`,
-                    '--brews-button-primary-background-hovered': `var(--reddit-${theme}-secondary)`,
-                    '--color-brews-primary-border': `var(--reddit-${theme})`,
-                    '--color-brews-primary-border-hovered': `var(--reddit-${theme}-dark)`,
-                    '--color-brews-primary-content': `var(--reddit-${theme})`,
-                    '--color-brews-button-primary-background': `var(--reddit-${theme})`,
-                    '--color-brews-button-primary-background-hovered': `var(--reddit-${theme}-secondary)`,
+                    '--brew-primary-border': `var(--reddit-${theme})`,
+                    '--brew-primary-border-hovered': `var(--reddit-${theme}-dark)`,
+                    '--brew-primary-content': `var(--reddit-${theme})`,
+                    '--brew-button-primary-background': `var(--reddit-${theme})`,
+                    '--brew-button-primary-background-hovered': `var(--reddit-${theme}-secondary)`,
+                    '--color-brew-primary-border': `var(--reddit-${theme})`,
+                    '--color-brew-primary-border-hovered': `var(--reddit-${theme}-dark)`,
+                    '--color-brew-primary-content': `var(--reddit-${theme})`,
+                    '--color-brew-button-primary-background': `var(--reddit-${theme})`,
+                    '--color-brew-button-primary-background-hovered': `var(--reddit-${theme}-secondary)`,
                 } as CSSProperties
             }
         >
             <div className="flex justify-between">
                 <select
-                    className="text-brews-primary-content"
+                    className="text-brew-primary-content"
                     value={theme}
                     onChange={(e) => setTheme(e.target?.value)}
                 >
