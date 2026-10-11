@@ -19,7 +19,7 @@ export type ToggleFieldProps = {
     onLabel?: string;
     offLabel?: string;
     onChange: (checked: boolean | undefined) => void;
-    onValidate?: (value: boolean | undefined) => (string|undefined);
+    onValidate?: (value: boolean | undefined) => string | undefined;
 };
 
 export const ToggleField = ({
@@ -29,20 +29,21 @@ export const ToggleField = ({
     checked: initialChecked,
     disabled = false,
     allowUndefined = false,
-    onLabel = "Yes",
-    offLabel = "No",
+    onLabel = 'Yes',
+    offLabel = 'No',
     onChange,
-    onValidate
+    onValidate,
 }: ToggleFieldProps) => {
-    const [checked, setChecked] = useState<boolean | undefined>(() => (initialChecked ?? (allowUndefined ? undefined : false)));
+    const [checked, setChecked] = useState<boolean | undefined>(
+        () => initialChecked ?? (allowUndefined ? undefined : false),
+    );
     const [error, setError] = useState<string | undefined>();
 
     const validateChange = (value: boolean | undefined) => {
         setChecked(value);
         if (onValidate) {
             const custom = onValidate(value);
-            if (custom)
-                return setError(custom);
+            if (custom) return setError(custom);
         }
         setError(undefined);
         onChange(value);
@@ -52,37 +53,31 @@ export const ToggleField = ({
         if (disabled) return;
 
         if (allowUndefined) {
-            if (checked === undefined)
-                validateChange(true);
-            else if (checked)
-                validateChange(false);
-            else
-                validateChange(undefined);
+            if (checked === undefined) validateChange(true);
+            else if (checked) validateChange(false);
+            else validateChange(undefined);
         } else {
             validateChange(!checked);
         }
     };
 
-    const stateLabel =
-        checked === undefined
-            ? ""
-            : checked
-                ? onLabel
-                : offLabel;
+    const stateLabel = checked === undefined ? '' : checked ? onLabel : offLabel;
 
     const trackClass =
         checked === undefined
-            ? "bg-neutral-400 dark:bg-neutral-600"
+            ? 'bg-neutral-400 dark:bg-neutral-600'
             : checked
-                ? (disabled ? "bg-neutral-500 text-left" : "bg-alienblue-500 text-left")
-                : "bg-neutral-500 dark:bg-neutral-700 justify-end";
+              ? disabled
+                  ? 'bg-neutral-500 text-left'
+                  : 'bg-alienblue-500 text-left'
+              : 'bg-neutral-500 dark:bg-neutral-700 justify-end';
 
     const thumbClass =
         checked === undefined
-            ? "translate-x-4 bg-neutral-100 dark:bg-neutral-200"
+            ? 'translate-x-4 bg-neutral-100 dark:bg-neutral-200'
             : checked
-                ? "translate-x-8 bg-white"
-                : "translate-x-0 bg-neutral-200 dark:bg-neutral-400";
+              ? 'translate-x-8 bg-white'
+              : 'translate-x-0 bg-neutral-200 dark:bg-neutral-400';
 
     return (
         <div className="relative min-w-35">
@@ -93,9 +88,7 @@ export const ToggleField = ({
                 <div
                     className={`
                     group flex items-center justify-between gap-2 select-none
-                    ${disabled
-                        ? "opacity-50 cursor-not-allowed disabled"
-                        : "cursor-pointer"}
+                    ${disabled ? 'opacity-50 cursor-not-allowed disabled' : 'cursor-pointer'}
                 `}
                 >
                     <button
@@ -134,21 +127,15 @@ export const ToggleField = ({
                         onClick={toggle}
                         className={`flex gap-2 items-center min-w-0 text-left ${disabled ? 'cursor-not-allowed' : 'cursor-pointer'}`}
                     >
-                        <span className="text-sm text-global-black-white">
-                            {label}
-                        </span>
+                        <span className="text-sm text-global-black-white">{label}</span>
                     </button>
                 </div>
 
-                {description && (
-                    <DescriptionTooltip text={description} />
-                )}
+                {description && <DescriptionTooltip text={description} />}
             </div>
 
             <div className="flex justify-start px-4">
-                <div className="text-danger-plain">
-                    {error}
-                </div>
+                <div className="text-danger-plain">{error}</div>
             </div>
         </div>
     );

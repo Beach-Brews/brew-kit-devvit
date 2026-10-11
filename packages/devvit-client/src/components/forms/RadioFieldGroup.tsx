@@ -8,10 +8,13 @@
 
 import { type CheckboxFieldProps, CheckboxFieldGroup } from './CheckboxFieldGroup';
 
-export type RadioFieldProps<T extends string> = Omit<CheckboxFieldProps<T>, 'min' | 'max' | 'onChange' | 'onValidate' | 'noCount'> & {
+export type RadioFieldProps<T extends string> = Omit<
+    CheckboxFieldProps<T>,
+    'min' | 'max' | 'onChange' | 'onValidate' | 'noCount'
+> & {
     required?: boolean;
     onChange: (value: T | undefined) => void;
-    onValidate?: (value: T | undefined) => (string|undefined);
+    onValidate?: (value: T | undefined) => string | undefined;
 };
 
 export const RadioFieldGroup = <T extends string>({
@@ -20,7 +23,6 @@ export const RadioFieldGroup = <T extends string>({
     onValidate,
     ...checkProps
 }: RadioFieldProps<T>) => {
-
     const onChangeRadio = (values: T[]) => {
         onChange(values[0]);
     };

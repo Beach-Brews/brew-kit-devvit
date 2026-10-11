@@ -20,6 +20,7 @@
         "node": ">=24"
     },
     "workspaces": [
+        "apps/*",
         "packages/*"
     ],
     "scripts": {

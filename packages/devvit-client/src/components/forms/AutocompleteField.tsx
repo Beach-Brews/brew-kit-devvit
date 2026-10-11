@@ -10,7 +10,7 @@ import { useRef, useState, type KeyboardEvent, type FocusEvent, useMemo, useLayo
 import { DescriptionTooltip } from './DescriptionTooltip';
 import { createPortal } from 'react-dom';
 
-export type AutocompleteOption<T> = { label: string, value: T };
+export type AutocompleteOption<T> = { label: string; value: T };
 export type AutocompleteOptions<T> = Record<string, AutocompleteOption<T>[]>;
 
 export type AutocompleteFieldProps<T> = {
@@ -18,7 +18,7 @@ export type AutocompleteFieldProps<T> = {
     name?: string;
     description?: string;
     options: AutocompleteOptions<T>;
-    selected?: T[] | undefined,
+    selected?: T[] | undefined;
     disabled?: boolean;
     onSelect: (value: T) => void;
     onFocus?: (value: T) => void;
@@ -26,7 +26,7 @@ export type AutocompleteFieldProps<T> = {
     onKeyDown?: (e: KeyboardEvent<HTMLTextAreaElement>) => void;
 };
 
-export const AutocompleteField = <T extends string,>({
+export const AutocompleteField = <T extends string>({
     label,
     name,
     description,
@@ -36,7 +36,7 @@ export const AutocompleteField = <T extends string,>({
     onSelect,
     onKeyDown,
     onFocus,
-    onBlur
+    onBlur,
 }: AutocompleteFieldProps<T>) => {
     const [value, setValue] = useState<string>(() => '');
     const [focused, setFocused] = useState(false);
@@ -47,7 +47,7 @@ export const AutocompleteField = <T extends string,>({
     const [pos, setPos] = useState({
         top: 0,
         left: 0,
-        placement: "bottom" as "top" | "bottom"
+        placement: 'bottom' as 'top' | 'bottom',
     });
 
     const filteredOptions = useMemo(() => {
@@ -56,8 +56,12 @@ export const AutocompleteField = <T extends string,>({
 
         return Object.entries(options).reduce<AutocompleteOptions<T>>((result, [group, items]) => {
             const filteredItems = query
-                ? items.filter(item => item.value.toLowerCase().includes(query) && !skipValues.some(s => s.trim().toLowerCase() == item.value.toLowerCase()))
-                : items.filter(item => !skipValues.some(s => s.trim().toLowerCase() == item.value.toLowerCase()));
+                ? items.filter(
+                      (item) =>
+                          item.value.toLowerCase().includes(query) &&
+                          !skipValues.some((s) => s.trim().toLowerCase() == item.value.toLowerCase()),
+                  )
+                : items.filter((item) => !skipValues.some((s) => s.trim().toLowerCase() == item.value.toLowerCase()));
 
             if (filteredItems.length > 0) {
                 result[group] = filteredItems;
@@ -77,25 +81,19 @@ export const AutocompleteField = <T extends string,>({
 
         let left = input.left;
         let top = input.bottom + margin;
-        let placement: "top" | "bottom" = "bottom";
+        let placement: 'top' | 'bottom' = 'bottom';
 
         // Clamp horizontally
-        left = Math.max(
-            margin,
-            Math.min(left, window.innerWidth - list.width - margin)
-        );
+        left = Math.max(margin, Math.min(left, window.innerWidth - list.width - margin));
 
         // Flip above if bottom would overflow
         if (top + list.height > window.innerHeight - margin) {
             top = input.top - list.height - margin;
-            placement = "top";
+            placement = 'top';
         }
 
         // Clamp vertically as fallback
-        top = Math.max(
-            margin,
-            Math.min(top, window.innerHeight - list.height - margin)
-        );
+        top = Math.max(margin, Math.min(top, window.innerHeight - list.height - margin));
 
         setPos({ top, left, placement });
     }, [focused, disabled, filteredOptions]);
@@ -136,10 +134,7 @@ export const AutocompleteField = <T extends string,>({
                     className={`
                         pointer-events-none absolute left-4 text-sm transition-all
                         text-neutral-content
-                        ${value
-                        ? "top-1 text-xs"
-                        : "top-3.5"
-                    }
+                        ${value ? 'top-1 text-xs' : 'top-3.5'}
                         group-focus-within:top-1
                         group-focus-within:translate-y-0
                         group-focus-within:text-xs
@@ -152,7 +147,7 @@ export const AutocompleteField = <T extends string,>({
                     className={`
                         absolute right-4 flex justify-end items-center gap-1
                         text-sm text-neutral-content transition-all
-                        ${value ? "top-1 text-xs" : "top-4"}
+                        ${value ? 'top-1 text-xs' : 'top-4'}
                         group-focus-within:top-1
                         group-focus-within:translate-y-0
                         group-focus-within:text-xs
@@ -169,7 +164,7 @@ export const AutocompleteField = <T extends string,>({
                     onKeyDown={onKeyDownHandler}
                     onFocus={onFocusHandler}
                     onBlur={onBlurHandler}
-                    onChange={e => onChange(e.target.value)}
+                    onChange={(e) => onChange(e.target.value)}
                     className={`
                         block w-full resize-none overflow-hidden bg-transparent
                         text-sm text-global-black-white outline-none leading-5
@@ -178,54 +173,56 @@ export const AutocompleteField = <T extends string,>({
                     `}
                 />
             </div>
-            {focused && !disabled && createPortal(
-                <div
-                    ref={listRef}
-                    className="
+            {focused &&
+                !disabled &&
+                createPortal(
+                    <div
+                        ref={listRef}
+                        className="
                         fixed z-50 w-[min(16rem,calc(100vw-1rem))]
                         max-h-64 overflow-auto
                         rounded-md border border-neutral-border-medium
                         bg-neutral-background-weak shadow-lg
                     "
-                    style={{
-                        top: pos.top,
-                        left: pos.left
-                    }}
-                >
-                    {!hasOptions && (
-                        <div className="px-3 py-1 text-xs font-semibold uppercase text-neutral-content">
-                            No options found
-                        </div>
-                    )}
-                    {Object.entries(filteredOptions).map(([group, items]) => (
-                        <div key={group} className="py-1">
+                        style={{
+                            top: pos.top,
+                            left: pos.left,
+                        }}
+                    >
+                        {!hasOptions && (
                             <div className="px-3 py-1 text-xs font-semibold uppercase text-neutral-content">
-                                {group}
+                                No options found
                             </div>
+                        )}
+                        {Object.entries(filteredOptions).map(([group, items]) => (
+                            <div key={group} className="py-1">
+                                <div className="px-3 py-1 text-xs font-semibold uppercase text-neutral-content">
+                                    {group}
+                                </div>
 
-                            {items.map((item) => (
-                                <button
-                                    key={`${group}:${item.value}`}
-                                    type="button"
-                                    className="
+                                {items.map((item) => (
+                                    <button
+                                        key={`${group}:${item.value}`}
+                                        type="button"
+                                        className="
                                         w-full px-3 py-2 text-left text-sm
                                         hover:bg-neutral-background-strong
                                         cursor-pointer
                                     "
-                                    onMouseDown={(e) => e.preventDefault()}
-                                    onClick={() => {
-                                        onChange('');
-                                        onSelect(item.value);
-                                    }}
-                                >
-                                    {item.label}
-                                </button>
-                            ))}
-                        </div>
-                    ))}
-                </div>,
-                document.body
-            )}
+                                        onMouseDown={(e) => e.preventDefault()}
+                                        onClick={() => {
+                                            onChange('');
+                                            onSelect(item.value);
+                                        }}
+                                    >
+                                        {item.label}
+                                    </button>
+                                ))}
+                            </div>
+                        ))}
+                    </div>,
+                    document.body,
+                )}
         </div>
     );
 };

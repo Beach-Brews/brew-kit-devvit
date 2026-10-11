@@ -14,9 +14,7 @@ export interface DescriptionTooltipProps {
     text: string;
 }
 
-export const DescriptionTooltip = ({
-    text
-}: DescriptionTooltipProps) => {
+export const DescriptionTooltip = ({ text }: DescriptionTooltipProps) => {
     const anchorRef = useRef<HTMLButtonElement | null>(null);
     const tooltipRef = useRef<HTMLDivElement | null>(null);
 
@@ -24,7 +22,7 @@ export const DescriptionTooltip = ({
     const [pos, setPos] = useState({
         top: 0,
         left: 0,
-        placement: "bottom" as "top" | "bottom"
+        placement: 'bottom' as 'top' | 'bottom',
     });
 
     useLayoutEffect(() => {
@@ -36,25 +34,19 @@ export const DescriptionTooltip = ({
 
         let left = anchor.left + anchor.width / 2 - tooltip.width / 2;
         let top = anchor.bottom + margin;
-        let placement: "top" | "bottom" = "bottom";
+        let placement: 'top' | 'bottom' = 'bottom';
 
         // Clamp horizontally
-        left = Math.max(
-            margin,
-            Math.min(left, window.innerWidth - tooltip.width - margin)
-        );
+        left = Math.max(margin, Math.min(left, window.innerWidth - tooltip.width - margin));
 
         // Flip above if bottom would overflow
         if (top + tooltip.height > window.innerHeight - margin) {
             top = anchor.top - tooltip.height - margin;
-            placement = "top";
+            placement = 'top';
         }
 
         // Clamp vertically as fallback
-        top = Math.max(
-            margin,
-            Math.min(top, window.innerHeight - tooltip.height - margin)
-        );
+        top = Math.max(margin, Math.min(top, window.innerHeight - tooltip.height - margin));
 
         setPos({ top, left, placement });
     }, [open, text]);
@@ -65,7 +57,7 @@ export const DescriptionTooltip = ({
                 ref={anchorRef}
                 type="button"
                 className="inline-flex cursor-pointer text-neutral-content hover:text-neutral-content-strong"
-                onTouchStart={() => setOpen(s => !s)}
+                onTouchStart={() => setOpen((s) => !s)}
                 onMouseEnter={() => setOpen(true)}
                 onMouseLeave={() => setOpen(false)}
                 onFocus={() => setOpen(true)}
@@ -87,13 +79,13 @@ export const DescriptionTooltip = ({
                         "
                         style={{
                             top: pos.top,
-                            left: pos.left
+                            left: pos.left,
                         }}
                     >
                         {text}
                     </div>,
-                    document.body
+                    document.body,
                 )}
         </>
     );
-}
+};

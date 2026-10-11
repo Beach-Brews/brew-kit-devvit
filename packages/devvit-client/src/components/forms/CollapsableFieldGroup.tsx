@@ -10,13 +10,13 @@ import React, { useState } from 'react';
 export type CollapsableFieldGroupProps = {
     label: string;
     expand?: boolean;
-    children: React.ReactNode
+    children: React.ReactNode;
 };
 
 export const CollapsableFieldGroup = ({
     label,
     expand: initialExpand = true,
-    children
+    children,
 }: CollapsableFieldGroupProps) => {
     const [expand, setExpand] = useState<boolean>(() => initialExpand);
     return (
@@ -26,7 +26,7 @@ export const CollapsableFieldGroup = ({
                     p-2 select-none cursor-pointer flex justify-between items-center
                     ${expand && 'border-b border-neutral-border'}
                 `}
-                onClick={() => setExpand(e => !e)}
+                onClick={() => setExpand((e) => !e)}
             >
                 <div className="font-medium text-sm">{label}</div>
                 <div className="text-xs">{expand ? '\u25B2' : '\u25BC'}</div>
@@ -36,9 +36,7 @@ export const CollapsableFieldGroup = ({
             state for the form components. Larger groups likely had slow rendering, and closing the group before the
             debounce triggered to save value causes lost data.
             */}
-            <div className={`flex flex-col p-2 gap-2 ${expand ? '' : 'hidden'}`}>
-                {children}
-            </div>
+            <div className={`flex flex-col p-2 gap-2 ${expand ? '' : 'hidden'}`}>{children}</div>
         </div>
     );
 };

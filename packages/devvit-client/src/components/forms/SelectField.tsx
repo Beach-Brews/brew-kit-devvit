@@ -24,7 +24,7 @@ export type SelectFieldProps<T extends string> = {
     required?: boolean;
     disabled?: boolean;
     onChange: (value: T) => void;
-    onValidate?: (value: string) => (string|undefined);
+    onValidate?: (value: string) => string | undefined;
 };
 
 export const SelectField = <T extends string>({
@@ -36,7 +36,7 @@ export const SelectField = <T extends string>({
     required = false,
     disabled = false,
     onChange,
-    onValidate
+    onValidate,
 }: SelectFieldProps<T>) => {
     const [onChangeDebounce, cancelChangeDebounce] = useDebounce((v: T) => onChange(v), 250);
     const [value, setValue] = useState<string>(() => initialValue);
@@ -45,18 +45,14 @@ export const SelectField = <T extends string>({
     const validateChange = (value: T, debounce: boolean = true) => {
         setValue(value);
         cancelChangeDebounce();
-        if (required && value.length <= 0)
-            return setError('Please select a value.');
+        if (required && value.length <= 0) return setError('Please select a value.');
         if (onValidate) {
             const custom = onValidate(value);
-            if (custom)
-                return setError(custom);
+            if (custom) return setError(custom);
         }
         setError(undefined);
-        if (debounce)
-            onChangeDebounce(value);
-        else
-            onChange(value);
+        if (debounce) onChangeDebounce(value);
+        else onChange(value);
     };
 
     return (
@@ -64,10 +60,11 @@ export const SelectField = <T extends string>({
             <div
                 className={`
                     relative rounded-3xl border
-                    ${error
-                    ? 'border-danger-plain focus-within:border-2'
-                    : 'border-neutral-border-medium focus-within:border-global-black-white'
-                }
+                    ${
+                        error
+                            ? 'border-danger-plain focus-within:border-2'
+                            : 'border-neutral-border-medium focus-within:border-global-black-white'
+                    }
                     ${disabled ? 'opacity-50 cursor-not-allowed' : ''}
                     bg-neutral-background-strong px-4 ${label !== '' ? 'pt-5 pb-2' : 'pt-3.5 pb-3.5'}
                 `}
@@ -80,22 +77,22 @@ export const SelectField = <T extends string>({
                     `}
                 >
                     {label}
-                    {required ? (<span className="text-danger-plain">*</span>) : ''}
+                    {required ? <span className="text-danger-plain">*</span> : ''}
                 </label>
 
                 <select
                     value={value}
                     name={name ?? label}
                     disabled={disabled}
-                    onBlur={e => validateChange(e.target.value as T, false)}
-                    onChange={e => validateChange(e.target.value as T)}
+                    onBlur={(e) => validateChange(e.target.value as T, false)}
+                    onChange={(e) => validateChange(e.target.value as T)}
                     className="
                         block w-full appearance-none bg-transparent
                         text-sm text-global-black-white outline-none
                         min-h-5 leading-5 pr-8 disabled:cursor-not-allowed
                     "
                 >
-                    {options.map(option => (
+                    {options.map((option) => (
                         <option
                             key={option.value}
                             value={option.value}
@@ -107,10 +104,8 @@ export const SelectField = <T extends string>({
                 </select>
 
                 <div className="flex gap-2 absolute right-4 top-1 justify-end items-center text-neutral-content text-sm">
-                    <span className="pointer-events-none">
-                        {'\u25BC'}
-                    </span>
-                    {description && (<DescriptionTooltip text={description} />)}
+                    <span className="pointer-events-none">{'\u25BC'}</span>
+                    {description && <DescriptionTooltip text={description} />}
                 </div>
             </div>
             <div className="flex justify-start px-4">

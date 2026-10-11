@@ -17,6 +17,11 @@ export default defineConfig(
             '@typescript-eslint/consistent-type-imports': 'error',
             '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
         },
+        languageOptions: {
+            parserOptions: {
+                tsconfigRootDir: import.meta.dirname,
+            },
+        },
     },
 
     // Browser + React code (client UI and client-side mocks)

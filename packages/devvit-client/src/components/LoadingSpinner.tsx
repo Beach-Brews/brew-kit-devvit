@@ -1,9 +1,9 @@
 ﻿/*!
-* Animated loading spinner.
-*
-* Author:  u/Beach-Brews
-* License: BSD-3-Clause
-*/
+ * Animated loading spinner.
+ *
+ * Author:  u/Beach-Brews
+ * License: BSD-3-Clause
+ */
 
 export const LoadingSpinner = ({
     barClassName,

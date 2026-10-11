@@ -29,7 +29,7 @@ export type CheckboxFieldProps<T extends string> = {
     min?: number;
     max?: number;
     onChange: (value: T[]) => void;
-    onValidate?: (value: T[]) => (string|undefined);
+    onValidate?: (value: T[]) => string | undefined;
 };
 
 export const CheckboxFieldGroup = <T extends string>({
@@ -42,25 +42,21 @@ export const CheckboxFieldGroup = <T extends string>({
     min = 0,
     max = 0,
     onChange,
-    onValidate
+    onValidate,
 }: CheckboxFieldProps<T>) => {
     const [onChangeDebounce, cancelChangeDebounce] = useDebounce((v: T[]) => onChange(v), 250);
-    const [values, setValues] = useState<T[]>(() => options
-        .filter(o => o.checked)
-        .reduce((v, o) => [...v, o.value], [] as T[])
+    const [values, setValues] = useState<T[]>(() =>
+        options.filter((o) => o.checked).reduce((v, o) => [...v, o.value], [] as T[]),
     );
     const [changed, setChanged] = useState<boolean>(false);
 
     const error = useMemo(() => {
         cancelChangeDebounce();
-        if (values.length < min)
-            return `Please select at least ${min} option${min > 1 ? 's' : ''}.`;
-        if (max > 0 && values.length > max)
-            return `You may only select at most ${max} options.`;
+        if (values.length < min) return `Please select at least ${min} option${min > 1 ? 's' : ''}.`;
+        if (max > 0 && values.length > max) return `You may only select at most ${max} options.`;
         if (onValidate) {
             const custom = onValidate(values);
-            if (custom)
-                return custom;
+            if (custom) return custom;
         }
         onChangeDebounce(values);
         return undefined;
@@ -68,9 +64,8 @@ export const CheckboxFieldGroup = <T extends string>({
 
     const onSelect = (value: T) => {
         setChanged(true);
-        setValues(vs => !vs.includes(value)
-            ? (max == 1 ? [value] : [...vs, value])
-            : vs.filter(v => v !== value)
+        setValues((vs) =>
+            !vs.includes(value) ? (max == 1 ? [value] : [...vs, value]) : vs.filter((v) => v !== value),
         );
     };
 
@@ -98,7 +93,9 @@ export const CheckboxFieldGroup = <T extends string>({
                         `}
                     >
                         {!noCount && max !== 1 && (
-                            <span>{min} - {max > 0 && max <= options.length ? max : options.length}</span>
+                            <span>
+                                {min} - {max > 0 && max <= options.length ? max : options.length}
+                            </span>
                         )}
                         {description && <DescriptionTooltip text={description} />}
                     </div>
@@ -110,7 +107,7 @@ export const CheckboxFieldGroup = <T extends string>({
                 </div>
             )}
             <div className="flex flex-col">
-                {options.map(o => {
+                {options.map((o) => {
                     const selected = values.includes(o.value);
                     return (
                         <div
@@ -119,7 +116,7 @@ export const CheckboxFieldGroup = <T extends string>({
                                 p-2 flex items-center gap-1
                                 ${disabled || o.disabled ? 'opacity-50 cursor-not-allowed' : 'group cursor-pointer'}
                             `}
-                            onClick={() => !disabled && !o.disabled ? onSelect(o.value) : null}
+                            onClick={() => (!disabled && !o.disabled ? onSelect(o.value) : null)}
                         >
                             <input
                                 type={max === 1 ? 'radio' : 'checkbox'}
@@ -128,25 +125,26 @@ export const CheckboxFieldGroup = <T extends string>({
                                 value={o.value}
                                 readOnly={true}
                                 checked={selected}
-                                className="hidden" />
+                                className="hidden"
+                            />
                             <div
                                 className={`
                                     size-6 flex items-center
                                     ${disabled || o.disabled ? 'opacity-50 cursor-not-allowed' : ''}
-                                    ${error
-                                        ? (selected
-                                            ? 'text-danger-plain group-hover:text-danger-plain-hovered'
-                                            : (values.length > max ? 'group-hover:text-danger-plain-hovered' : 'group-hover:text-neutral-content-weak'))
-                                        : (selected
-                                            ? 'text-global-black-white group-hover:text-neutral-content'
-                                            : 'group-hover:text-neutral-content-weak')
+                                    ${
+                                        error
+                                            ? selected
+                                                ? 'text-danger-plain group-hover:text-danger-plain-hovered'
+                                                : values.length > max
+                                                  ? 'group-hover:text-danger-plain-hovered'
+                                                  : 'group-hover:text-neutral-content-weak'
+                                            : selected
+                                              ? 'text-global-black-white group-hover:text-neutral-content'
+                                              : 'group-hover:text-neutral-content-weak'
                                     }
                                 `}
                             >
-                                {max === 1
-                                    ? (<BulletIcon fill={selected} />)
-                                    : (<CheckboxIcon fill={selected} />)
-                                }
+                                {max === 1 ? <BulletIcon fill={selected} /> : <CheckboxIcon fill={selected} />}
                             </div>
                             <div
                                 className={`

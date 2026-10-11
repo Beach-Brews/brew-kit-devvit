@@ -8,10 +8,7 @@
 
 import { useEffect, useMemo, useRef } from 'react';
 
-export const debounce = <TArgs extends unknown[]>(
-    callback: (...args: TArgs) => void,
-    wait: number
-) => {
+export const debounce = <TArgs extends unknown[]>(callback: (...args: TArgs) => void, wait: number) => {
     let timeoutId: ReturnType<typeof setTimeout> | null = null;
 
     const clear = () => {
@@ -33,10 +30,7 @@ export const debounce = <TArgs extends unknown[]>(
     return [handler, clear] as const;
 };
 
-export const useDebounce = <TArgs extends unknown[]>(
-    callback: (...args: TArgs) => void,
-    wait: number
-) => {
+export const useDebounce = <TArgs extends unknown[]>(callback: (...args: TArgs) => void, wait: number) => {
     const callbackRef = useRef(callback);
 
     useEffect(() => {
