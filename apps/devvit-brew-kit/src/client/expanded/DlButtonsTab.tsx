@@ -12,21 +12,21 @@ export const DlButtonsTab = () => {
             <h2>Primary</h2>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-2 justify-between items-center">
                 <div className="flex justify-center">
-                    <button className="brew-btn-primary">Primary Button</button>
+                    <button className="brew-btn-primary">Primary</button>
                 </div>
                 <div className="flex justify-center">
                     <button disabled={true} className="brew-btn-primary">
-                        Primary Disabled
+                        Disabled
                     </button>
                 </div>
                 <div className="flex justify-center">
                     <button className="brew-btn-primary brew-btn-lg">
-                        Primary Button
+                        Large
                     </button>
                 </div>
                 <div className="flex justify-center">
                     <button className="brew-btn-primary brew-btn-sm">
-                        Primary Button
+                        Small
                     </button>
                 </div>
             </div>
@@ -34,22 +34,45 @@ export const DlButtonsTab = () => {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-2 justify-between items-center">
                 <div className="flex justify-center">
                     <button className="brew-btn-secondary">
-                        Secondary Button
+                        Secondary
                     </button>
                 </div>
                 <div className="flex justify-center">
                     <button disabled={true} className="brew-btn-secondary">
-                        Secondary Disabled
+                        Disabled
                     </button>
                 </div>
                 <div className="flex justify-center">
                     <button className="brew-btn-secondary brew-btn-lg">
-                        Secondary Button
+                        Large
                     </button>
                 </div>
                 <div className="flex justify-center">
                     <button className="brew-btn-secondary brew-btn-sm">
-                        Secondary Button
+                        Small
+                    </button>
+                </div>
+            </div>
+            <h2>Danger</h2>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-2 justify-between items-center">
+                <div className="flex justify-center">
+                    <button className="brew-btn-danger">
+                        Danger
+                    </button>
+                </div>
+                <div className="flex justify-center">
+                    <button disabled={true} className="brew-btn-danger">
+                        Disabled
+                    </button>
+                </div>
+                <div className="flex justify-center">
+                    <button className="brew-btn-danger brew-btn-lg">
+                        Large
+                    </button>
+                </div>
+                <div className="flex justify-center">
+                    <button className="brew-btn-danger brew-btn-sm">
+                        Small
                     </button>
                 </div>
             </div>

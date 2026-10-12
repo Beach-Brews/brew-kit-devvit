@@ -24,6 +24,8 @@ export type AutocompleteFieldProps<T> = {
     onFocus?: (value: T) => void;
     onBlur?: (value: T) => void;
     onKeyDown?: (e: KeyboardEvent<HTMLTextAreaElement>) => void;
+    // TODO: Single value
+    // TODO: Free-entry
 };
 
 export const AutocompleteField = <T extends string>({

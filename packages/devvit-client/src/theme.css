@@ -52,10 +52,6 @@ html {
 
 @layer components {
     /* ===== Button styles ===== */
-    .brew-btn {
-        @apply flex justify-center items-center gap-1 p-2 rounded-full cursor-pointer
-    disabled:bg-secondary-background disabled:text-secondary-onbackground disabled:pointer-events-none disabled:opacity-50;
-    }
 
     .brew-btn-primary {
         @apply flex justify-center items-center gap-1 p-2 rounded-full cursor-pointer

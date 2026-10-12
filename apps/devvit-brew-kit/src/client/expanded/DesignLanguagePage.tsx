@@ -12,6 +12,7 @@ import { DlTypographyTab } from './DlTypographyTab';
 import { DlButtonsTab } from './DlButtonsTab';
 import { DlFormsTab } from './DlFormsTab';
 import { DlTabsTab } from './DlTabsTab';
+import { DlAlertsTab } from './DlAlertsTab';
 import { TabGroup } from '@brew-kit/devvit/client';
 
 export const TempTab = () => {
@@ -40,7 +41,7 @@ export const DesignLanguagePage = () => {
         >
             <div className="flex justify-between">
                 <select
-                    className="text-brew-primary-content"
+                    className="bg-brew-button-primary-background text-brew-button-primary-onbackground font-bold rounded-md p-2"
                     value={theme}
                     onChange={(e) => setTheme(e.target?.value)}
                 >
@@ -85,7 +86,7 @@ export const DesignLanguagePage = () => {
                     'Tables': <TempTab />,
                     'Tabs': <DlTabsTab />,
                     'Tooltips': <TempTab />,
-                    'Alerts': <TempTab />,
+                    'Alerts': <DlAlertsTab />,
                     'Toasts': <TempTab />,
                     'Modals': <TempTab />,
                 }}

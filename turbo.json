@@ -16,6 +16,10 @@
         "test": {
             "dependsOn": ["^build"]
         },
+        "playtest": {
+            "dependsOn": ["^build"],
+            "cache": false,
+        },
         "clean": {
             "cache": false
         }
