@@ -33,9 +33,7 @@ export const DlButtonsTab = () => {
             <h2>Secondary</h2>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-2 justify-between items-center">
                 <div className="flex justify-center">
-                    <button className="brew-btn-secondary">
-                        Secondary
-                    </button>
+                    <button className="brew-btn-secondary">Secondary</button>
                 </div>
                 <div className="flex justify-center">
                     <button disabled={true} className="brew-btn-secondary">
@@ -56,9 +54,7 @@ export const DlButtonsTab = () => {
             <h2>Danger</h2>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-2 justify-between items-center">
                 <div className="flex justify-center">
-                    <button className="brew-btn-danger">
-                        Danger
-                    </button>
+                    <button className="brew-btn-danger">Danger</button>
                 </div>
                 <div className="flex justify-center">
                     <button disabled={true} className="brew-btn-danger">

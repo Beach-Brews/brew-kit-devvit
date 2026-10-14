@@ -18,7 +18,7 @@
         },
         "playtest": {
             "dependsOn": ["^build"],
-            "cache": false,
+            "cache": false
         },
         "clean": {
             "cache": false

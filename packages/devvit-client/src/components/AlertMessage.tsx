@@ -10,9 +10,9 @@ import {
     ExclamationCircleIcon,
     ExclamationTriangleIcon,
     InformationCircleIcon,
-    XMarkIcon
+    XMarkIcon,
 } from '@heroicons/react/24/outline';
-import  { type ReactNode, type MouseEvent, useState, useCallback } from 'react';
+import { type ReactNode, type MouseEvent, useState, useCallback } from 'react';
 
 export type AlertType = 'danger' | 'caution' | 'info' | 'success';
 
@@ -29,35 +29,36 @@ export const AlertMessage = ({
     hideIcon = false,
     dismissable = false,
     onDismissed,
-    children
+    children,
 }: AlertMessageProps) => {
-
     const [visible, setVisible] = useState<boolean>(true);
 
-    const dismissAlert = useCallback((e: MouseEvent) => {
-        setVisible(false);
-        onDismissed?.(e);
-    }, [onDismissed, setVisible]);
+    const dismissAlert = useCallback(
+        (e: MouseEvent) => {
+            setVisible(false);
+            onDismissed?.(e);
+        },
+        [onDismissed, setVisible],
+    );
 
-    if (!visible)
-        return;
+    if (!visible) return;
 
     const typeStyle = {
-        'danger': {
+        danger: {
             style: 'bg-danger-background text-danger-onbackground',
-            icon: (<ExclamationCircleIcon className="size-6" />)
+            icon: <ExclamationCircleIcon className="size-6" />,
         },
-        'caution': {
+        caution: {
             style: 'bg-caution-background text-caution-onbackground',
-            icon: (<ExclamationTriangleIcon className="size-6" />)
+            icon: <ExclamationTriangleIcon className="size-6" />,
         },
-        'info': {
+        info: {
             style: 'bg-primary-background text-primary-onbackground',
-            icon: (<InformationCircleIcon className="size-6" />)
+            icon: <InformationCircleIcon className="size-6" />,
         },
-        'success': {
+        success: {
             style: 'bg-success-background text-success-onbackground',
-            icon: (<CheckCircleIcon className="size-6" />)
+            icon: <CheckCircleIcon className="size-6" />,
         },
     }[type];
     return (

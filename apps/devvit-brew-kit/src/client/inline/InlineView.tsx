@@ -9,7 +9,6 @@ import { type MouseEvent, useCallback } from 'react';
 import { requestExpandedMode } from '@devvit/web/client';
 
 export function InlineView() {
-
     const launchExpanded = useCallback((e: MouseEvent) => {
         requestExpandedMode(e.nativeEvent as PointerEvent, 'expanded');
     }, []);

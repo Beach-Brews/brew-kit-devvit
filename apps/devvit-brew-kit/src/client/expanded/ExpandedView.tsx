@@ -6,6 +6,7 @@
  */
 
 import { DesignLanguagePage } from './DesignLanguagePage';
+import { Toaster } from '@brew-kit/devvit/client';
 
 export function ExpandedView() {
     return (
@@ -15,6 +16,7 @@ export function ExpandedView() {
                     <DesignLanguagePage />
                 </div>
             </div>
+            <Toaster />
         </div>
     );
 }
