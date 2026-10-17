@@ -5,7 +5,7 @@
  * License: BSD-3-Clause
  */
 
-import { SubDefaultIcon, toast } from '@brew-kit/devvit/client';
+import { AlertMessage, SubDefaultIcon, toast } from '@brew-kit/devvit/client';
 import type { ReactNode } from 'react';
 
 export const DlIconItem = ({
@@ -34,6 +34,9 @@ export const DlIconsTab = () => {
     return (
         <div className="flex flex-col gap-4">
             <h1>Icons</h1>
+            <AlertMessage type="info">
+                Click on icons to copy icon name.
+            </AlertMessage>
             <h2>General</h2>
             <div className="grid grid-cols-1 md:grid-cols-6 justify-between gap-4">
                 <DlIconItem icon={<SubDefaultIcon />} name={'SubDefaultIcon'} />

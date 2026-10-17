@@ -6,7 +6,7 @@
  */
 
 import type { CSSProperties, MouseEvent } from 'react';
-import { toast } from '@brew-kit/devvit/client';
+import { AlertMessage, toast } from '@brew-kit/devvit/client';
 
 export const DlColorItem = ({ color }: { color: string }) => {
     const value =
@@ -42,6 +42,9 @@ export const DlColorTab = () => {
     return (
         <div className="flex flex-col gap-4">
             <h1>Colors</h1>
+            <AlertMessage type="info">
+                Click color to copy color name. Ctrl + click to copy HEX value.
+            </AlertMessage>
             <h2>Reddit</h2>
             <div className="grid grid-cols-1 md:grid-cols-6 justify-between gap-4">
                 <DlColorItem color="reddit-orangered" />

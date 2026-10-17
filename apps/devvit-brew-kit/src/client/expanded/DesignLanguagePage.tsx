@@ -16,6 +16,7 @@ import { DlAlertsTab } from './DlAlertsTab';
 import { TabGroup } from '@brew-kit/devvit/client';
 import { DlIconsTab } from './DlIconsTab';
 import { DlToastsTab } from './DlToastsTab';
+import { DlTooltipsTab } from './DlTooltipsTab';
 
 export const TempTab = () => {
     return <div>Placeholder for the time being.</div>;
@@ -87,7 +88,7 @@ export const DesignLanguagePage = () => {
                     'Forms': <DlFormsTab />,
                     'Tables': <TempTab />,
                     'Tabs': <DlTabsTab />,
-                    'Tooltips': <TempTab />,
+                    'Tooltips': <DlTooltipsTab />,
                     'Icons': <DlIconsTab />,
                     'Alerts': <DlAlertsTab />,
                     'Toasts': <DlToastsTab />,

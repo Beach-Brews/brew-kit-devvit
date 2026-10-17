@@ -6,15 +6,20 @@
  * License: BSD-3-Clause
  */
 
-import { useState, useRef, useLayoutEffect } from 'react';
+import { useState, useRef, useLayoutEffect, type ComponentType, type PropsWithChildren } from 'react';
 import { InformationCircleIcon } from '@heroicons/react/24/outline';
 import { createPortal } from 'react-dom';
 
 export interface DescriptionTooltipProps {
-    text: string;
+    text?: string | undefined;
+    Icon?: ComponentType<{ className?: string }>;
 }
 
-export const DescriptionTooltip = ({ text }: DescriptionTooltipProps) => {
+export const DescriptionTooltip = ({
+    text,
+    Icon = InformationCircleIcon,
+    children,
+}: PropsWithChildren<DescriptionTooltipProps>) => {
     const anchorRef = useRef<HTMLButtonElement | null>(null);
     const tooltipRef = useRef<HTMLDivElement | null>(null);
 
@@ -64,7 +69,7 @@ export const DescriptionTooltip = ({ text }: DescriptionTooltipProps) => {
                 onBlur={() => setOpen(false)}
                 aria-label="More information"
             >
-                <InformationCircleIcon className="size-4" />
+                <Icon className="size-4" />
             </button>
             {open &&
                 createPortal(
@@ -83,6 +88,7 @@ export const DescriptionTooltip = ({ text }: DescriptionTooltipProps) => {
                         }}
                     >
                         {text}
+                        {children}
                     </div>,
                     document.body,
                 )}

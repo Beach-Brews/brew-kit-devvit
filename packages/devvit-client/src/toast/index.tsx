@@ -81,12 +81,12 @@ export type ToasterProps = {
 export const Toaster = ({ position = 's' }: ToasterProps) => {
     const toasts = useSyncExternalStore(subscribeToasts, getToasts, getToasts);
     const className = {
-        "nw": "top-4 items-start",
-        "n": "top-4 items-center",
-        "ne": "top-4 items-end",
-        "sw": "bottom-4 items-start flex-col-reverse",
-        "s": "bottom-4 items-center flex-col-reverse",
-        "se": "bottom-4 items-end flex-col-reverse",
+        nw: 'top-4 items-start',
+        n: 'top-4 items-center',
+        ne: 'top-4 items-end',
+        sw: 'bottom-4 items-start flex-col-reverse',
+        s: 'bottom-4 items-center flex-col-reverse',
+        se: 'bottom-4 items-end flex-col-reverse',
     }[position];
     return (
         <section
