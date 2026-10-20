@@ -495,9 +495,6 @@ html {
     --color-inverted-secondary-onBackground: var(--inverted-secondary-onBackground);
     --color-inverted-secondary-plain: var(--inverted-secondary-plain);
     --color-inverted-secondary-plain-hover: var(--inverted-secondary-plain-hover);
-
-    --color-plain-inverted-onBackground: var(--plain-inverted-onBackground);
-    --color-plain-onBackground: var(--plain-onBackground);
     /*</editor-fold>*/
 
     /*<editor-fold desc="Primary">*/
@@ -554,9 +551,6 @@ html {
     --color-media-onBackground: var(--media-onBackground);
     --color-media-onBackground-disabled: var(--media-onBackground-disabled);
     --color-media-onBackground-weak: var(--media-onBackground-weak);
-    --color-media-onbackground: var(--media-onbackground);
-    --color-media-onbackground-disabled: var(--media-onbackground-disabled);
-    --color-media-onbackground-weak: var(--media-onbackground-weak);
     /*</editor-fold>*/
 
     /*<editor-fold desc="Danger">*/
@@ -1075,9 +1069,6 @@ html {
     --inverted-secondary-onBackground: var(--global-white);
     --inverted-secondary-plain: var(--coolgray-100);
     --inverted-secondary-plain-hover: var(--global-white);
-
-    --plain-inverted-onBackground: var(--global-white);
-    --plain-onBackground: var(--global-black);
     /*</editor-fold>*/
 
     /*<editor-fold desc="Primary">*/
@@ -1132,7 +1123,7 @@ html {
     --media-border-selected: var(--global-white);
     --media-border-weak: color-mix(in srgb, var(--global-white) 10%, transparent);
     --media-onBackground: var(--global-white);
-    --media-onBackground-disabled: color-mix(in srgb, var(--global-white) 25%, transparent);;
+    --media-onBackground-disabled: color-mix(in srgb, var(--global-white) 25%, transparent);
     --media-onBackground-weak: var(--coolgray-75);
     /*</editor-fold>*/
 
@@ -1393,9 +1384,6 @@ html {
         --inverted-secondary-onBackground: var(--global-black);
         --inverted-secondary-plain: var(--coolgray-900);
         --inverted-secondary-plain-hover: var(--global-black);
-
-        --plain-inverted-onBackground: var(--global-black);
-        --plain-onBackground: var(--global-white);
         /*</editor-fold>*/
 
         /*<editor-fold desc="Primary">*/
