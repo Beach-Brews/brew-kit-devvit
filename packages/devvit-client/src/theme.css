@@ -194,7 +194,7 @@ html {
     --color-brand-juniperblue-dark: var(--brand-juniperblue-dark);
     /*</editor-fold>*/
 
-    /*<editor-fold defaultstate="collapsed" desc="coolgray">*/
+    /*<editor-fold desc="coolgray">*/
     --color-coolgray-25: var(--coolgray-25);
     --color-coolgray-50: var(--coolgray-50);
     --color-coolgray-75: var(--coolgray-75);
@@ -480,87 +480,271 @@ html {
     --color-neutral-content-disabled: var(--neutral-content-disabled);
     --color-neutral-content-strong: var(--neutral-content-strong);
     --color-neutral-content-weak: var(--neutral-content-weak);
+
+    --color-inverted-interactive-background-disabled: var(--inverted-interactive-background-disabled);
+    --color-inverted-interactive-content-disabled: var(--inverted-interactive-content-disabled);
+    --color-inverted-interactive-pressed: var(--inverted-interactive-pressed);
+    --color-inverted-neutral-background: var(--inverted-neutral-background);
+    --color-inverted-neutral-background-hover: var(--inverted-neutral-background-hover);
+    --color-inverted-neutral-border: var(--inverted-neutral-border);
+    --color-inverted-neutral-content: var(--inverted-neutral-content);
+    --color-inverted-neutral-content-strong: var(--inverted-neutral-content-strong);
+    --color-inverted-secondary-background: var(--inverted-secondary-background);
+    --color-inverted-secondary-background-hover: var(--inverted-secondary-background-hover);
+    --color-inverted-secondary-background-selected: var(--inverted-secondary-background-selected);
+    --color-inverted-secondary-onBackground: var(--inverted-secondary-onBackground);
+    --color-inverted-secondary-plain: var(--inverted-secondary-plain);
+    --color-inverted-secondary-plain-hover: var(--inverted-secondary-plain-hover);
+
+    --color-plain-inverted-onBackground: var(--plain-inverted-onBackground);
+    --color-plain-onBackground: var(--plain-onBackground);
     /*</editor-fold>*/
 
-    --color-primary-plain: var(--primary-plain);
-    --color-primary-plain-hovered: var(--primary-plain-hovered);
-    --color-primary-plain-visited: var(--primary-plain-visited);
-    --color-primary-onbackground: var(--primary-onbackground);
-    --color-primary-onbackground-selected: var(--primary-onbackground-selected);
+    /*<editor-fold desc="Primary">*/
+    --color-primary: var(--primary);
     --color-primary-background: var(--primary-background);
-    --color-primary-background-hovered: var(--primary-background-hovered);
+    --color-primary-background-highlighted: var(--primary-background-highlighted);
+    --color-primary-background-hover: var(--primary-background-hover);
     --color-primary-background-selected: var(--primary-background-selected);
     --color-primary-border: var(--primary-border);
-    --color-primary-border-hovered: var(--primary-border-hovered);
+    --color-primary-border-hover: var(--primary-border-hover);
+    --color-primary-hover: var(--primary-hover);
+    --color-primary-onBackground: var(--primary-onBackground);
+    --color-primary-onBackground-selected: var(--primary-onBackground-selected);
+    --color-primary-plain: var(--primary-plain);
+    --color-primary-plain-hover: var(--primary-plain-hover);
+    --color-primary-plain-selected: var(--primary-plain-selected);
+    --color-primary-plain-visited: var(--primary-plain-visited);
+    --color-primary-switchBackground: var(--primary-switchBackground);
+    --color-primary-switchBackground-hover: var(--primary-switchBackground-hover);
+    --color-primary-switchBackground-selected: var(--primary-switchBackground-selected);
+    --color-primary-switchBackground-selected-hover: var(--primary-switchBackground-selected-hover);
+    --color-primary-visited: var(--primary-visited);
 
-    --color-secondary-plain: var(--secondary-plain);
-    --color-secondary-plain-weak: var(--secondary-plain-weak);
-    --color-secondary-plain-hovered: var(--secondary-plain-hovered);
-    --color-secondary-onbackground: var(--secondary-onbackground);
+    --color-primarynext-background: var(--primarynext-background);
+    --color-primarynext-background-hover: var(--primarynext-background-hover);
+    --color-primarynext-border: var(--primarynext-border);
+    --color-primarynext-border-hover: var(--primarynext-border-hover);
+    --color-primarynext-onBackground: var(--primarynext-onBackground);
+    --color-primarynext-plain: var(--primarynext-plain);
+    --color-primarynext-plain-hover: var(--primarynext-plain-hover);
+    --color-primarynext-plain-selected: var(--primarynext-plain-selected);
+    --color-primarynext-plain-visited: var(--primarynext-plain-visited);
+    /*</editor-fold>*/
+
+    /*<editor-fold desc="Secondary">*/
+    --color-secondary: var(--secondary);
     --color-secondary-background: var(--secondary-background);
-    --color-secondary-background-hovered: var(--secondary-background-hovered);
+    --color-secondary-background-hover: var(--secondary-background-hover);
     --color-secondary-background-selected: var(--secondary-background-selected);
+    --color-secondary-hover: var(--secondary-hover);
+    --color-secondary-onBackground: var(--secondary-onBackground);
+    --color-secondary-plain: var(--secondary-plain);
+    --color-secondary-plain-hover: var(--secondary-plain-hover);
+    --color-secondary-plain-weak: var(--secondary-plain-weak);
+    --color-secondary-weak: var(--secondary-weak);
+    /*</editor-fold>*/
 
+    /*<editor-fold desc="Media">*/
+    --color-media-background: var(--media-background);
+    --color-media-background-hover: var(--media-background-hover);
+    --color-media-background-selected: var(--media-background-selected);
+    --color-media-border-selected: var(--media-border-selected);
+    --color-media-border-weak: var(--media-border-weak);
+    --color-media-onBackground: var(--media-onBackground);
+    --color-media-onBackground-disabled: var(--media-onBackground-disabled);
+    --color-media-onBackground-weak: var(--media-onBackground-weak);
     --color-media-onbackground: var(--media-onbackground);
     --color-media-onbackground-disabled: var(--media-onbackground-disabled);
     --color-media-onbackground-weak: var(--media-onbackground-weak);
-    --color-media-background: var(--media-background);
-    --color-media-background-hovered: var(--media-background-hovered);
-    --color-media-background-selected: var(--media-background-selected);
-    --color-media-border-selected: var(--media-border-selected);
+    /*</editor-fold>*/
 
-    --color-danger-plain: var(--danger-plain);
-    --color-danger-plain-hovered: var(--danger-plain-hovered);
-    --color-danger-onbackground: var(--danger-onbackground);
+    /*<editor-fold desc="Danger">*/
     --color-danger-background: var(--danger-background);
-    --color-danger-background-hovered: var(--danger-background-hovered);
+    --color-danger-background-disabled: var(--danger-background-disabled);
+    --color-danger-background-highlighted: var(--danger-background-highlighted);
+    --color-danger-background-hover: var(--danger-background-hover);
     --color-danger-background-weaker: var(--danger-background-weaker);
+    --color-danger-content: var(--danger-content);
+    --color-danger-content-default: var(--danger-content-default);
+    --color-danger-content-hover: var(--danger-content-hover);
+    --color-danger-onBackground: var(--danger-onBackground);
+    --color-danger-plain: var(--danger-plain);
+    --color-danger-plain-hover: var(--danger-plain-hover);
+    /*</editor-fold>*/
 
-    --color-success-plain: var(--success-plain);
-    --color-success-plain-hovered: var(--success-plain-hovered);
-    --color-success-onbackground: var(--success-onbackground);
+    /*<editor-fold desc="Success">*/
     --color-success-background: var(--success-background);
-    --color-success-background-hovered: var(--success-background-hovered);
+    --color-success-background-highlighted: var(--success-background-highlighted);
+    --color-success-background-hover: var(--success-background-hover);
+    --color-success-content: var(--success-content);
+    --color-success-hover: var(--success-hover);
+    --color-success-onBackground: var(--success-onBackground);
+    --color-success-plain: var(--success-plain);
+    --color-success-plain-hover: var(--success-plain-hover);
+    /*</editor-fold>*/
 
-    --color-caution-plain: var(--caution-plain);
-    --color-caution-plain-hovered: var(--caution-plain-hovered);
-    --color-caution-onbackground: var(--caution-onbackground);
+    /*<editor-fold desc="Caution/Warning">*/
+    --color-alert-caution: var(--alert-caution);
     --color-caution-background: var(--caution-background);
-    --color-caution-background-hovered: var(--caution-background-hovered);
+    --color-caution-background-highlighted: var(--caution-background-highlighted);
+    --color-caution-background-hover: var(--caution-background-hover);
+    --color-caution-onBackground: var(--caution-onBackground);
+    --color-caution-plain: var(--caution-plain);
+    --color-caution-plain-hover: var(--caution-plain-hover);
+    --color-warning-background: var(--warning-background);
+    --color-warning-background-hover: var(--warning-background-hover);
+    --color-warning-content: var(--warning-content);
+    --color-warning-content-hover: var(--warning-content-hover);
+    --color-warning-onBackground: var(--warning-onBackground);
+    /*</editor-fold>*/
 
-    --color-brand-onbackground: var(--brand-onbackground);
+    /*<editor-fold desc="Banners">*/
+    --color-banner-plain: var(--banner-plain);
+    --color-banner-plain-inverted: var(--banner-plain-inverted);
+    --color-banner-error: var(--banner-error);
+    --color-banner-caution: var(--banner-caution);
+    --color-banner-success: var(--banner-success);
+    --color-banner-brand: var(--banner-brand);
+    --color-banner-plain-text: var(--banner-plain-text);
+    --color-banner-plain-inverted-text: var(--banner-plain-inverted-text);
+    --color-banner-error-text: var(--banner-error-text);
+    --color-banner-caution-text: var(--banner-caution-text);
+    --color-banner-caution-hover: var(--banner-caution-hover);
+    --color-banner-success-text: var(--banner-success-text);
+    --color-banner-brand-text: var(--banner-brand-text);
+    /*</editor-fold>*/
+
+    /*<editor-fold desc="Brand / Scrim / Interactive / Links">*/
     --color-brand-background: var(--brand-background);
-    --color-brand-background-hovered: var(--brand-background-hovered);
+    --color-brand-background-hover: var(--brand-background-hover);
+    --color-brand-onBackground: var(--brand-onBackground);
 
-    --color-scrim-background-strong: var(--scrim-background-strong);
+    --color-scrim: var(--scrim);
     --color-scrim-background: var(--scrim-background);
+    --color-scrim-background-strong: var(--scrim-background-strong);
+    --color-scrim-gradient: var(--scrim-gradient);
+    --color-scrim-strong: var(--scrim-strong);
 
-    --color-interactive-content-disabled: var(--interactive-content-disabled);
-    --color-interactive-pressed: var(--interactive-pressed);
     --color-interactive-background-disabled: var(--interactive-background-disabled);
+    --color-interactive-content-disabled: var(--interactive-content-disabled);
     --color-interactive-focused: var(--interactive-focused);
+    --color-interactive-pressed: var(--interactive-pressed);
 
-    --color-upvote-plain: var(--upvote-plain);
-    --color-upvote-plain-weaker: var(--upvote-plain-weaker);
-    --color-upvote-plain-disabled: var(--upvote-plain-disabled);
-    --color-upvote-onbackground: var(--upvote-onbackground);
+    --color-a-default: var(--a-default);
+    --color-a-hover: var(--a-hover);
+    --color-a-visited: var(--a-visited);
+
+    --color-ui-modalbackground: var(--ui-modalbackground);
+    /*</editor-fold>*/
+
+    /*<editor-fold desc="Upvote">*/
     --color-upvote-background: var(--upvote-background);
-    --color-upvote-background-hovered: var(--upvote-background-hovered);
     --color-upvote-background-disabled: var(--upvote-background-disabled);
-    --color-upvote-onstrongscrim: var(--upvote-onstrongscrim);
-    --color-upvote-onstrongscrim-weaker: var(--upvote-onstrongscrim-weaker);
-    --color-upvote-onstrongscrim-disabled: var(--upvote-onstrongscrim-disabled);
+    --color-upvote-background-hover: var(--upvote-background-hover);
+    --color-upvote-content: var(--upvote-content);
+    --color-upvote-content-weak: var(--upvote-content-weak);
+    --color-upvote-disabled: var(--upvote-disabled);
+    --color-upvote-onBackground: var(--upvote-onBackground);
+    --color-upvote-onStrongScrim: var(--upvote-onStrongScrim);
+    --color-upvote-onStrongScrim-disabled: var(--upvote-onStrongScrim-disabled);
+    --color-upvote-onStrongScrim-weaker: var(--upvote-onStrongScrim-weaker);
+    --color-upvote-plain: var(--upvote-plain);
+    --color-upvote-plain-disabled: var(--upvote-plain-disabled);
+    --color-upvote-plain-weaker: var(--upvote-plain-weaker);
+    /*</editor-fold>*/
 
-    --color-downvote-plain: var(--downvote-plain);
-    --color-downvote-plain-weaker: var(--downvote-plain-weaker);
-    --color-downvote-plain-disabled: var(--downvote-plain-disabled);
-    --color-downvote-onbackground: var(--downvote-onbackground);
+    /*<editor-fold desc="Downvote">*/
     --color-downvote-background: var(--downvote-background);
-    --color-downvote-background-hovered: var(--downvote-background-hovered);
     --color-downvote-background-disabled: var(--downvote-background-disabled);
-    --color-downvote-onstrongscrim: var(--downvote-onstrongscrim);
-    --color-downvote-onstrongscrim-weaker: var(--downvote-onstrongscrim-weaker);
-    --color-downvote-onstrongscrim-disabled: var(--downvote-onstrongscrim-disabled);
+    --color-downvote-background-hover: var(--downvote-background-hover);
+    --color-downvote-content: var(--downvote-content);
+    --color-downvote-content-weak: var(--downvote-content-weak);
+    --color-downvote-disabled: var(--downvote-disabled);
+    --color-downvote-onBackground: var(--downvote-onBackground);
+    --color-downvote-onStrongScrim: var(--downvote-onStrongScrim);
+    --color-downvote-onStrongScrim-disabled: var(--downvote-onStrongScrim-disabled);
+    --color-downvote-onStrongScrim-weaker: var(--downvote-onStrongScrim-weaker);
+    --color-downvote-plain: var(--downvote-plain);
+    --color-downvote-plain-disabled: var(--downvote-plain-disabled);
+    --color-downvote-plain-weaker: var(--downvote-plain-weaker);
+    /*</editor-fold>*/
+
+    /*<editor-fold desc="Tags">*/
+    --color-tags-admin-background: var(--tags-admin-background);
+    --color-tags-admin-content: var(--tags-admin-content);
+    --color-tags-admin-content-weaker: var(--tags-admin-content-weaker);
+    --color-tags-app-background: var(--tags-app-background);
+    --color-tags-app-content: var(--tags-app-content);
+    --color-tags-app-content-weaker: var(--tags-app-content-weaker);
+    --color-tags-author-background: var(--tags-author-background);
+    --color-tags-author-content: var(--tags-author-content);
+    --color-tags-author-content-weaker: var(--tags-author-content-weaker);
+    --color-tags-author-media-content-weaker: var(--tags-author-media-content-weaker);
+    --color-tags-brand-background: var(--tags-brand-background);
+    --color-tags-brand-content: var(--tags-brand-content);
+    --color-tags-brand-content-weaker: var(--tags-brand-content-weaker);
+    --color-tags-brand-media-content-weaker: var(--tags-brand-media-content-weaker);
+    --color-tags-caution-background: var(--tags-caution-background);
+    --color-tags-caution-content: var(--tags-caution-content);
+    --color-tags-caution-content-weaker: var(--tags-caution-content-weaker);
+    --color-tags-caution-media-content-weaker: var(--tags-caution-media-content-weaker);
+    --color-tags-danger-background: var(--tags-danger-background);
+    --color-tags-danger-content: var(--tags-danger-content);
+    --color-tags-danger-content-weaker: var(--tags-danger-content-weaker);
+    --color-tags-danger-media-content-weaker: var(--tags-danger-media-content-weaker);
+    --color-tags-moderator-background: var(--tags-moderator-background);
+    --color-tags-moderator-content: var(--tags-moderator-content);
+    --color-tags-moderator-content-weaker: var(--tags-moderator-content-weaker);
+    --color-tags-moderator-media-content-weaker: var(--tags-moderator-media-content-weaker);
+    --color-tags-neutral-background: var(--tags-neutral-background);
+    --color-tags-neutral-content: var(--tags-neutral-content);
+    --color-tags-neutral-content-weaker: var(--tags-neutral-content-weaker);
+    --color-tags-nsfw-background: var(--tags-nsfw-background);
+    --color-tags-nsfw-content: var(--tags-nsfw-content);
+    --color-tags-nsfw-content-weaker: var(--tags-nsfw-content-weaker);
+    --color-tags-nsfw-media-content-weaker: var(--tags-nsfw-media-content-weaker);
+    --color-tags-success-background: var(--tags-success-background);
+    --color-tags-success-content: var(--tags-success-content);
+    --color-tags-success-content-weaker: var(--tags-success-content-weaker);
+    --color-tags-success-media-content-weaker: var(--tags-success-media-content-weaker);
+    --color-tags-verified-background: var(--tags-verified-background);
+    --color-tags-verified-content: var(--tags-verified-content);
+    --color-tags-verified-content-weaker: var(--tags-verified-content-weaker);
+    /*</editor-fold>*/
+
+    /*<editor-fold desc="Inputs / Switches / Tooltips">*/
+    --color-input-secondary: var(--input-secondary);
+    --color-input-secondary-hover: var(--input-secondary-hover);
+    --color-input-border: var(--input-border);
+    --color-input-bordered: var(--input-bordered);
+    --color-input-bordered-hover: var(--input-bordered-hover);
+    --color-input-secondary-text: var(--input-secondary-text);
+    --color-input-bordered-text: var(--input-bordered-text);
+    --color-input-helper-text: var(--input-helper-text);
+    --color-input-pressed: var(--input-pressed);
+    --color-input-radio: var(--input-radio);
+    --color-input-radio-hover: var(--input-radio-hover);
+    --color-input-search-yellow-gradient: var(--input-search-yellow-gradient);
+    --color-label-default: var(--label-default);
+
+    --color-switch-input-background-pressed-scrim: var(--switch-input-background-pressed-scrim);
+    --color-switch-input-background-handle: var(--switch-input-background-handle);
+    --color-switch-input-background-handle-disabled: var(--switch-input-background-handle-disabled);
+    --color-switch-input-background-default: var(--switch-input-background-default);
+    --color-switch-input-background-default-hover: var(--switch-input-background-default-hover);
+    --color-switch-input-background-default-disabled: var(--switch-input-background-default-disabled);
+    --color-switch-input-background-checked: var(--switch-input-background-checked);
+    --color-switch-input-background-checked-hover: var(--switch-input-background-checked-hover);
+    --color-switch-input-background-checked-disabled: var(--switch-input-background-checked-disabled);
+
+    --color-tooltip-bg-neutral: var(--tooltip-bg-neutral);
+    --color-tooltip-text-neutral: var(--tooltip-text-neutral);
+    --color-tooltip-bg-inverted: var(--tooltip-bg-inverted);
+    --color-tooltip-text-inverted: var(--tooltip-text-inverted);
+    --color-tooltip-bg-primary: var(--tooltip-bg-primary);
+    --color-tooltip-text-primary: var(--tooltip-text-primary);
+    /*</editor-fold>*/
 }
 
 :root {
@@ -876,87 +1060,271 @@ html {
     --neutral-content-disabled: var(--puregray-300);
     --neutral-content-strong: var(--coolgray-900);
     --neutral-content-weak: var(--coolgray-550);
+
+    --inverted-interactive-background-disabled: color-mix(in srgb, var(--global-white) 5%, transparent);
+    --inverted-interactive-content-disabled: color-mix(in srgb, var(--global-white) 25%, transparent);
+    --inverted-interactive-pressed: color-mix(in srgb, var(--global-white) 15%, transparent);
+    --inverted-neutral-background: var(--coolgray-950);
+    --inverted-neutral-background-hover: var(--coolgray-900);
+    --inverted-neutral-border: color-mix(in srgb, var(--global-white) 20%, transparent);
+    --inverted-neutral-content: var(--coolgray-200);
+    --inverted-neutral-content-strong: var(--coolgray-50);
+    --inverted-secondary-background: var(--coolgray-800);
+    --inverted-secondary-background-hover: var(--coolgray-750);
+    --inverted-secondary-background-selected: var(--coolgray-700);
+    --inverted-secondary-onBackground: var(--global-white);
+    --inverted-secondary-plain: var(--coolgray-100);
+    --inverted-secondary-plain-hover: var(--global-white);
+
+    --plain-inverted-onBackground: var(--global-white);
+    --plain-onBackground: var(--global-black);
     /*</editor-fold>*/
 
+    /*<editor-fold desc="Primary">*/
+    --primary: var(--alienblue-600);
+    --primary-background: var(--global-black);
+    --primary-background-highlighted: var(--alienblue-50);
+    --primary-background-hover: var(--coolgray-850);
+    --primary-background-selected: var(--alienblue-900);
+    --primary-border: var(--neutral-border-medium);
+    --primary-border-hover: var(--coolgray-900);
+    --primary-hover: var(--alienblue-700);
+    --primary-onBackground: var(--global-white);
+    --primary-onBackground-selected: var(--global-white);
     --primary-plain: var(--alienblue-600);
-    --primary-plain-hovered: var(--alienblue-700);
-    --primary-plain-visited: var(--berrypurple-600);
-    --primary-onbackground: var(--global-white);
-    --primary-onbackground-selected: var(--global-white);
-    --primary-background: var(--alienblue-600);
-    --primary-background-hovered: var(--alienblue-700);
-    --primary-background-selected: var(--alienblue-800);
-    --primary-border: var(--alienblue-600);
-    --primary-border-hovered: var(--alienblue-700);
+    --primary-plain-hover: var(--alienblue-700);
+    --primary-plain-selected: var(--coolgray-900);
+    --primary-plain-visited: var(--berrypurple-700);
+    --primary-switchBackground: var(--coolgray-250);
+    --primary-switchBackground-hover: var(--coolgray-300);
+    --primary-switchBackground-selected: var(--global-black);
+    --primary-switchBackground-selected-hover: var(--coolgray-850);
+    --primary-visited: var(--berrypurple-600);
 
-    --secondary-plain: var(--puregray-850);
-    --secondary-plain-weak: var(--puregray-525);
-    --secondary-plain-hovered: var(--global-black);
-    --secondary-onbackground: var(--global-black);
-    --secondary-background: var(--puregray-150);
-    --secondary-background-hovered: var(--puregray-200);
-    --secondary-background-selected: var(--puregray-300);
+    --primarynext-background: var(--global-black);
+    --primarynext-background-hover: var(--coolgray-850);
+    --primarynext-border: var(--neutral-border-medium);
+    --primarynext-border-hover: var(--coolgray-900);
+    --primarynext-onBackground: var(--global-white);
+    --primarynext-plain: var(--alienblue-700);
+    --primarynext-plain-hover: var(--alienblue-800);
+    --primarynext-plain-selected: var(--coolgray-900);
+    --primarynext-plain-visited: var(--berrypurple-700);
+    /*</editor-fold>*/
 
-    --media-onbackground: var(--global-white);
-    --media-onbackground-disabled: color-mix(in srgb, var(--global-white) 25%, transparent);
-    --media-onbackground-weak: var(--coolgray-200);
-    --media-background: color-mix(in srgb, var(--global-black) 54%, transparent);
-    --media-background-hovered: color-mix(in srgb, var(--global-black) 75%, transparent);
-    --media-background-selected: color-mix(in srgb, var(--global-black) 75%, transparent);
+    /*<editor-fold desc="Secondary">*/
+    --secondary: var(--coolgray-850);
+    --secondary-background: var(--coolgray-75);
+    --secondary-background-hover: var(--coolgray-100);
+    --secondary-background-selected: var(--coolgray-150);
+    --secondary-hover: var(--global-black);
+    --secondary-onBackground: var(--global-black);
+    --secondary-plain: var(--coolgray-900);
+    --secondary-plain-hover: var(--global-black);
+    --secondary-plain-weak: var(--coolgray-550);
+    --secondary-weak: var(--coolgray-525);
+    /*</editor-fold>*/
+
+    /*<editor-fold desc="Media">*/
+    --media-background: color-mix(in srgb, var(--global-black) 60%, transparent);
+    --media-background-hover: color-mix(in srgb, var(--global-black) 80%, transparent);
+    --media-background-selected: color-mix(in srgb, var(--global-black) 80%, transparent);
     --media-border-selected: var(--global-white);
+    --media-border-weak: color-mix(in srgb, var(--global-white) 10%, transparent);
+    --media-onBackground: var(--global-white);
+    --media-onBackground-disabled: color-mix(in srgb, var(--global-white) 25%, transparent);;
+    --media-onBackground-weak: var(--coolgray-75);
+    --media-onbackground: var(--global-white);
+    --media-onbackground-disabled: color-mix(in srgb, var(--global-white) 25%, transparent);;
+    --media-onbackground-weak: var(--coolgray-200);
+    /*</editor-fold>*/
 
-    --danger-plain: var(--red-600);
-    --danger-plain-hovered: var(--red-700);
-    --danger-onbackground: var(--global-white);
+    /*<editor-fold desc="Danger">*/
     --danger-background: var(--red-500);
-    --danger-background-hovered: var(--red-600);
-    --danger-background-weaker: var(--red-200);
+    --danger-background-disabled: var(--red-200);
+    --danger-background-highlighted: var(--red-50);
+    --danger-background-hover:var(--red-600);
+    --danger-background-weaker: var(--red-100);
+    --danger-content: var(--red-600);
+    --danger-content-default: var(--global-white);
+    --danger-content-hover: var(--red-700);
+    --danger-onBackground: var(--global-white);
+    --danger-plain: var(--red-600);
+    --danger-plain-hover: var(--red-700);
+    /*</editor-fold>*/
 
-    --success-plain: var(--kiwigreen-600);
-    --success-plain-hovered: var(--kiwigreen-700);
-    --success-onbackground: var(--global-white);
+    /*<editor-fold desc="Success">*/
     --success-background: var(--kiwigreen-500);
-    --success-background-hovered: var(--kiwigreen-600);
+    --success-background-highlighted: var(--kiwigreen-50);
+    --success-background-hover: var(--kiwigreen-600);
+    --success-content: var(--kiwigreen-600);
+    --success-hover: var(--kiwigreen-700);
+    --success-onBackground: var(--global-white);
+    --success-plain: var(--kiwigreen-600);
+    --success-plain-hover: var(--kiwigreen-700);
+    /*</editor-fold>*/
 
+    /*<editor-fold desc="Caution/Warning">*/
+    --alert-caution: var(--yellow-500);
+    --caution-background: var(--yellow-200);
+    --caution-background-highlighted: var(--yellow-50);
+    --caution-background-hover: var(--yellow-300);
+    --caution-onBackground: var(--global-black);
     --caution-plain: var(--yellow-600);
-    --caution-plain-hovered: var(--yellow-700);
-    --caution-onbackground: var(--global-white);
-    --caution-background: var(--yellow-500);
-    --caution-background-hovered: var(--yellow-500);
+    --caution-plain-hover: var(--yellow-700);
+    --warning-background: var(--yellow-400);
+    --warning-background-hover: var(--yellow-500);
+    --warning-content: var(--yellow-600);
+    --warning-content-hover: var(--yellow-700);
+    --warning-onBackground: var(--global-black);
+    /*</editor-fold>*/
 
-    --brand-onbackground: var(--global-white);
+    /*<editor-fold desc="Banners">*/
+    --banner-plain: var(--neutral-background-strong);
+    --banner-plain-inverted: var(--neutral-content-strong);
+    --banner-error: var(--danger-background);
+    --banner-caution: var(--caution-background);
+    --banner-success: var(--success-background);
+    --banner-brand: var(--brand-background);
+    --banner-plain-text: var(--neutral-content);
+    --banner-plain-inverted-text: var(--neutral-background-weak);
+    --banner-error-text: var(--danger-onBackground);
+    --banner-caution-text: var(--caution-onBackground);
+    --banner-caution-hover: var(--caution-background-hover);
+    --banner-success-text: var(--success-onBackground);
+    --banner-brand-text: var(--brand-onBackground);
+    /*</editor-fold>*/
+
+    /*<editor-fold desc="Brand / Scrim / Interactive / Links">*/
     --brand-background: var(--orangered-500);
-    --brand-background-hovered: var(--orangered-600);
+    --brand-background-hover: var(--orangered-600);
+    --brand-onBackground: var(--global-white);
 
-    --scrim-background-strong: color-mix(in srgb, var(--global-black) 80%, transparent);
+    --scrim: color-mix(in srgb, var(--global-black) 60%, transparent);
     --scrim-background: color-mix(in srgb, var(--global-black) 60%, transparent);
+    --scrim-background-strong: color-mix(in srgb, var(--global-black) 80%, transparent);
+    --scrim-gradient: linear-gradient(180deg, #00000000, #0000008a 60%, #00000099 100%);
+    --scrim-strong: color-mix(in srgb, var(--global-black) 80%, transparent);
 
-    --interactive-content-disabled: color-mix(in srgb, var(--global-black) 25%, transparent);
-    --interactive-pressed: color-mix(in srgb, var(--global-black) 16%, transparent);
     --interactive-background-disabled: color-mix(in srgb, var(--global-black) 5%, transparent);
-    --interactive-focused: var(--lightblue-500);
+    --interactive-content-disabled: color-mix(in srgb, var(--global-black) 25%, transparent);
+    --interactive-focused: var(--lightblue-600);
+    --interactive-pressed: color-mix(in srgb, var(--global-black) 15%, transparent);
 
-    --upvote-plain: var(--orangered-600);
-    --upvote-plain-weaker: var(--orangered-500);
-    --upvote-plain-disabled: color-mix(in srgb, var(--orangered-600) 30%, transparent);
-    --upvote-onbackground: var(--global-white);
+    --a-default: var(--primary);
+    --a-hover: var(--primary-hover);
+    --a-visited: var(--primary-visited);
+
+    --ui-modalbackground: var(--neutral-background-strong);
+    /*</editor-fold>*/
+
+    /*<editor-fold desc="Upvote">*/
     --upvote-background: var(--orangered-500);
-    --upvote-background-hovered: var(--orangered-600);
-    --upvote-background-disabled: color-mix(in srgb, var(--orangered-500) 30%, transparent);
-    --upvote-onstrongscrim: var(--orangered-400);
-    --upvote-onstrongscrim-weaker: var(--orangered-500);
-    --upvote-onstrongscrim-disabled: color-mix(in srgb, var(--orangered-400) 30%, transparent);
+    --upvote-background-disabled: color-mix(in srgb, var(--upvote-background) 30%, transparent);
+    --upvote-background-hover: var(--orangered-600);
+    --upvote-content: var(--orangered-600);
+    --upvote-content-weak: var(--brand-orangered);
+    --upvote-disabled: color-mix(in srgb, var(--upvote-content) 30%, transparent);
+    --upvote-onBackground: var(--global-white);
+    --upvote-onStrongScrim: var(--orangered-300);
+    --upvote-onStrongScrim-disabled: color-mix(in srgb, var(--upvote-onStrongScrim) 30%, transparent);
+    --upvote-onStrongScrim-weaker: var(--orangered-400);
+    --upvote-plain: var(--orangered-600);
+    --upvote-plain-disabled: color-mix(in srgb, var(--upvote-plain) 30%, transparent);
+    --upvote-plain-weaker: var(--orangered-400);
+    /*</editor-fold>*/
 
-    --downvote-plain: var(--periwinkle-600);
-    --downvote-plain-weaker: var(--periwinkle-500);
-    --downvote-plain-disabled: color-mix(in srgb, var(--periwinkle-600) 30%, transparent);
-    --downvote-onbackground: var(--global-white);
+    /*<editor-fold desc="Downvote">*/
     --downvote-background: var(--periwinkle-500);
-    --downvote-background-hovered: var(--periwinkle-600);
-    --downvote-background-disabled: color-mix(in srgb, var(--periwinkle-500) 30%, transparent);
-    --downvote-onstrongscrim: var(--periwinkle-400);
-    --downvote-onstrongscrim-weaker: var(--periwinkle-500);
-    --downvote-onstrongscrim-disabled: color-mix(in srgb, var(--periwinkle-400) 30%, transparent);
+    --downvote-background-disabled: color-mix(in srgb, var(--downvote-background) 30%, transparent);
+    --downvote-background-hover: var(--periwinkle-600);
+    --downvote-content: var(--periwinkle-600);
+    --downvote-content-weak: var(--periwinkle-500);
+    --downvote-disabled: color-mix(in srgb, var(--downvote-content) 30%, transparent);
+    --downvote-onBackground: var(--global-white);
+    --downvote-onStrongScrim: var(--periwinkle-300);
+    --downvote-onStrongScrim-disabled: color-mix(in srgb, var(--downvote-onStrongScrim) 30%, transparent);
+    --downvote-onStrongScrim-weaker: var(--periwinkle-400);
+    --downvote-plain: var(--periwinkle-600);
+    --downvote-plain-disabled: color-mix(in srgb, var(--downvote-plain) 30%, transparent);
+    --downvote-plain-weaker: var(--periwinkle-500);
+    /*</editor-fold>*/
+
+    /*<editor-fold desc="Tags">*/
+    --tags-admin-background: var(--orangered-50);
+    --tags-admin-content: var(--orangered-600);
+    --tags-admin-content-weaker: var(--orangered-500);
+    --tags-app-background: var(--coolgray-50);
+    --tags-app-content: var(--coolgray-750);
+    --tags-app-content-weaker: var(--coolgray-750);
+    --tags-author-background: var(--alienblue-50);
+    --tags-author-content: var(--alienblue-600);
+    --tags-author-content-weaker: var(--alienblue-500);
+    --tags-author-media-content-weaker: var(--alienblue-300);
+    --tags-brand-background: var(--orangered-50);
+    --tags-brand-content: var(--orangered-600);
+    --tags-brand-content-weaker: var(--orangered-500);
+    --tags-brand-media-content-weaker: var(--orangered-300);
+    --tags-caution-background: var(--yellow-50);
+    --tags-caution-content: var(--yellow-700);
+    --tags-caution-content-weaker: var(--yellow-500);
+    --tags-caution-media-content-weaker: var(--yellow-200);
+    --tags-danger-background: var(--red-50);
+    --tags-danger-content: var(--red-600);
+    --tags-danger-content-weaker: var(--red-500);
+    --tags-danger-media-content-weaker: var(--red-300);
+    --tags-moderator-background: var(--kiwigreen-50);
+    --tags-moderator-content: var(--kiwigreen-600);
+    --tags-moderator-content-weaker: var(--kiwigreen-500);
+    --tags-moderator-media-content-weaker: var(--kiwigreen-300);
+    --tags-neutral-background: var(--coolgray-50);
+    --tags-neutral-content: var(--coolgray-750);
+    --tags-neutral-content-weaker: var(--coolgray-750);
+    --tags-nsfw-background: var(--sakurapink-50);
+    --tags-nsfw-content: var(--sakurapink-600);
+    --tags-nsfw-content-weaker: var(--sakurapink-500);
+    --tags-nsfw-media-content-weaker: var(--sakurapink-300);
+    --tags-success-background: var(--kiwigreen-50);
+    --tags-success-content: var(--kiwigreen-600);
+    --tags-success-content-weaker: var(--kiwigreen-500);
+    --tags-success-media-content-weaker: var(--kiwigreen-300);
+    --tags-verified-background: var(--coolgray-50);
+    --tags-verified-content: var(--coolgray-750);
+    --tags-verified-content-weaker: var(--coolgray-750);
+    /*</editor-fold>*/
+
+    /*<editor-fold desc="Inputs / Switches / Tooltips">*/
+    --input-secondary: var(--secondary-background);
+    --input-secondary-hover: var(--secondary-background-hover);
+    --input-border: transparent;
+    --input-bordered: transparent;
+    --input-bordered-hover: var(--neutral-background-hover);
+    --input-secondary-text: var(--secondary-onBackground);
+    --input-bordered-text: var(--secondary-plain);
+    --input-helper-text: var(--secondary-plain-weak);
+    --input-pressed: var(--interactive-pressed);
+    --input-radio: var(--secondary-plain-weak);
+    --input-radio-hover: var(--neutral-content-strong);
+    --input-search-yellow-gradient: var(--yellow-200);
+    --label-default: var(--neutral-content-weak);
+
+    --switch-input-background-pressed-scrim: var(--interactive-pressed);
+    --switch-input-background-handle: var(--global-white);
+    --switch-input-background-handle-disabled: var(--secondary-background);
+    --switch-input-background-default: var(--primary-switchBackground);
+    --switch-input-background-default-hover: var(--primary-switchBackground-hover);
+    --switch-input-background-default-disabled: var(--interactive-background-disabled);
+    --switch-input-background-checked: var(--primary-switchBackground-selected);
+    --switch-input-background-checked-hover: var(--primary-switchBackground-selected-hover);
+    --switch-input-background-checked-disabled: var(--interactive-content-disabled);
+
+    --tooltip-bg-neutral: var(--neutral-background-strong);
+    --tooltip-text-neutral: var(--neutral-content);
+    --tooltip-bg-inverted: var(--neutral-content);
+    --tooltip-text-inverted: var(--neutral-background);
+    --tooltip-bg-primary: var(--primary-background);
+    --tooltip-text-primary: var(--primary-onBackground);
+    /*</editor-fold>*/
 }
 
 @media (prefers-color-scheme: dark) {
