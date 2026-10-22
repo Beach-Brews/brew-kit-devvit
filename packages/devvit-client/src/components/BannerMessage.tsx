@@ -14,23 +14,23 @@ import {
 } from '@heroicons/react/24/outline';
 import { type ReactNode, type MouseEvent, useState, useCallback } from 'react';
 
-export type AlertType = 'danger' | 'caution' | 'info' | 'success';
+export type BannerType = 'danger' | 'caution' | 'plain' | 'plain-inverted' | 'success' | 'brand';
 
-export type AlertMessageProps = {
-    type: AlertType;
+export type BannerMessageProps = {
+    type: BannerType;
     hideIcon?: boolean;
     dismissable?: boolean;
     onDismissed?: (event: MouseEvent) => boolean | undefined;
     children: ReactNode;
 };
 
-export const AlertMessage = ({
+export const BannerMessage = ({
     type,
     hideIcon = false,
     dismissable = false,
     onDismissed,
     children,
-}: AlertMessageProps) => {
+}: BannerMessageProps) => {
     const [visible, setVisible] = useState<boolean>(true);
 
     const dismissAlert = useCallback(
@@ -45,22 +45,31 @@ export const AlertMessage = ({
 
     const typeStyle = {
         danger: {
-            style: 'bg-danger-background text-danger-onbackground',
+            style: 'bg-banner-error text-banner-error-text',
             icon: <ExclamationCircleIcon className="size-6" />,
         },
         caution: {
-            style: 'bg-caution-background text-caution-onbackground',
+            style: 'bg-banner-caution text-banner-caution-text',
             icon: <ExclamationTriangleIcon className="size-6" />,
         },
-        info: {
-            style: 'bg-primary-background text-primary-onbackground',
+        plain: {
+            style: 'bg-banner-plain text-banner-plain-text border border-neutral-border',
+            icon: <InformationCircleIcon className="size-6" />,
+        },
+        'plain-inverted': {
+            style: 'bg-banner-plain-inverted text-banner-plain-inverted-text',
             icon: <InformationCircleIcon className="size-6" />,
         },
         success: {
-            style: 'bg-success-background text-success-onbackground',
+            style: 'bg-banner-success text-banner-success-text',
             icon: <CheckCircleIcon className="size-6" />,
         },
+        brand: {
+            style: 'bg-banner-brand text-banner-brand-text',
+            icon: <InformationCircleIcon className="size-6" />,
+        },
     }[type];
+
     return (
         <div className={`flex items-center gap-2 px-4 py-2 rounded-full ${typeStyle.style}`}>
             {!hideIcon && typeStyle.icon}

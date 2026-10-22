@@ -16,7 +16,7 @@ export function InlineView() {
     return (
         <div className="w-full h-full overflow-none flex flex-col justify-center items-center">
             <div>
-                <button className="brew-btn-primary" onClick={launchExpanded}>
+                <button className="" onClick={launchExpanded}>
                     Launch Brew-Kit Demo
                 </button>
             </div>

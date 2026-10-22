@@ -6,12 +6,12 @@
  */
 
 import { useSyncExternalStore } from 'react';
-import { type AlertType, AlertMessage } from '../components';
+import { type BannerType, BannerMessage } from './BannerMessage';
 import { genUid } from '../utils/uuidGenerator';
 
 export type Toast = {
     id: string;
-    type: AlertType;
+    type: BannerType;
     message: string;
 };
 
@@ -47,7 +47,7 @@ const dismissToast = (id: string) => {
     return true;
 };
 
-const show = (message: string, type: AlertType, options: ToastOptions = {}): string => {
+const show = (message: string, type: BannerType, options: ToastOptions = {}): string => {
     const id = options.id ?? `tst_${genUid()}`;
     const item: Toast = { id, message, type: type ?? 'info' };
 
@@ -69,7 +69,9 @@ const show = (message: string, type: AlertType, options: ToastOptions = {}): str
 export const toast = {
     dismiss: dismissToast,
     success: (message: string, options: ToastOptions = {}) => show(message, 'success', options),
-    info: (message: string, options: ToastOptions = {}) => show(message, 'info', options),
+    brand: (message: string, options: ToastOptions = {}) => show(message, 'brand', options),
+    plain: (message: string, options: ToastOptions = {}) => show(message, 'plain', options),
+    plainInverted: (message: string, options: ToastOptions = {}) => show(message, 'plain-inverted', options),
     caution: (message: string, options: ToastOptions = {}) => show(message, 'caution', options),
     danger: (message: string, options: ToastOptions = {}) => show(message, 'danger', options),
 };
@@ -99,9 +101,9 @@ export const Toaster = ({ position = 's' }: ToasterProps) => {
                     role={t.type === 'danger' ? 'alert' : 'status'}
                     className="pointer-events-auto w-full max-w-md shadow-lg rounded-full"
                 >
-                    <AlertMessage type={t.type} dismissable onDismissed={() => dismissToast(t.id)}>
+                    <BannerMessage type={t.type} dismissable onDismissed={() => dismissToast(t.id)}>
                         {t.message}
-                    </AlertMessage>
+                    </BannerMessage>
                 </div>
             ))}
         </section>

@@ -6,24 +6,19 @@
  * License: BSD-3-Clause
  */
 
-import { type CSSProperties, useState } from 'react';
-import { DlColorTab } from './DlColorTab';
-import { DlTypographyTab } from './DlTypographyTab';
-import { DlButtonsTab } from './DlButtonsTab';
-import { DlFormsTab } from './DlFormsTab';
-import { DlTabsTab } from './DlTabsTab';
-import { DlAlertsTab } from './DlAlertsTab';
+import { type CSSProperties } from 'react';
 import { TabGroup } from '@brew-kit/devvit/client';
-import { DlIconsTab } from './DlIconsTab';
+import { DlColorTab } from './DlColorTab';
+import { DlBannersTab } from './DlBannersTab';
 import { DlToastsTab } from './DlToastsTab';
-import { DlTooltipsTab } from './DlTooltipsTab';
 
 export const TempTab = () => {
     return <div>Placeholder for the time being.</div>;
 };
 
 export const DesignLanguagePage = () => {
-    const [theme, setTheme] = useState<string>('limegreen');
+    //const [theme, setTheme] = useState<string>('limegreen');
+    const theme = 'limegreen';
     return (
         <div
             className="flex flex-col gap-4 p-4"
@@ -42,6 +37,7 @@ export const DesignLanguagePage = () => {
                 } as CSSProperties
             }
         >
+            {/*
             <div className="flex justify-between">
                 <select
                     className="bg-brew-button-primary-background text-brew-button-primary-onbackground font-bold rounded-md p-2"
@@ -80,19 +76,21 @@ export const DesignLanguagePage = () => {
                     </option>
                 </select>
             </div>
+            */}
             <TabGroup
                 tabs={{
                     'Colors': <DlColorTab />,
-                    'Typography': <DlTypographyTab />,
-                    'Buttons': <DlButtonsTab />,
-                    'Forms': <DlFormsTab />,
-                    'Tables': <TempTab />,
-                    'Tabs': <DlTabsTab />,
-                    'Tooltips': <DlTooltipsTab />,
-                    'Icons': <DlIconsTab />,
-                    'Alerts': <DlAlertsTab />,
+                    //'Typography': <TempTab />,
+                    //'Buttons': <TempTab />,
+                    //'Forms': <TempTab />,
+                    //'Tables': <TempTab />,
+                    //'Tabs': <TempTab />,
+                    //'Tooltips': <TempTab />,
+                    //'Icons': <TempTab />,
+                    'Banners': <DlBannersTab />,
                     'Toasts': <DlToastsTab />,
-                    'Modals': <TempTab />,
+                    //'Modals': <TempTab />,
+                    //'Page': <TempTab />,*/
                 }}
             />
         </div>

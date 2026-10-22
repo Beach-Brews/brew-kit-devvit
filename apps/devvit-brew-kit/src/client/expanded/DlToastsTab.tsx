@@ -1,5 +1,5 @@
 ﻿/*!
- * The alerts tab for the Design Language.
+ * The toaster tab for the Design Language.
  *
  * Author:  u/Beach-Brews
  * License: BSD-3-Clause
@@ -20,9 +20,21 @@ export const DlToastsTab = () => {
             </button>
             <button
                 className="brew-btn-secondary"
-                onClick={() => toast.info('Started Processing.')}
+                onClick={() => toast.plain('Started Processing.')}
             >
-                Info
+                Plain
+            </button>
+            <button
+                className="brew-btn-secondary"
+                onClick={() => toast.plainInverted('Started Processing.')}
+            >
+                Plain (Inverted)
+            </button>
+            <button
+                className="brew-btn-secondary"
+                onClick={() => toast.brand('Hello Reddit!')}
+            >
+                Brand
             </button>
             <button
                 className="brew-btn-secondary"
