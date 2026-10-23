@@ -14,7 +14,6 @@
 @source './**/*.js';
 
 @theme {
-
     /*<editor-fold desc="Color Definitions">*/
 
     /*<editor-fold desc="Core Colors">*/
@@ -591,7 +590,9 @@
     /*</editor-fold> End Color Definitions*/
 
     /*<editor-fold desc="Font / Text">*/
-    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+    --font-sans:
+        -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Apple Color Emoji',
+        'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
     --font-mono: Noto Mono, Menlo, Monaco, Consolas, monospace;
 
     --text-10: 0.625rem;
@@ -696,21 +697,6 @@
     --text-label-default: var(--text-caption-1);
     --text-label-default--line-height: var(--text-caption-1--line-height);
     --text-label-default--font-weight: var(--text-caption-1--font-weight);
-
-    @media (max-width: 599px) {
-        :root {
-            --text-huge-display: 3rem;
-            --text-huge-display--line-height: 3rem;
-            --text-title-3: 1.1875rem;
-            --text-headline: 1.0625rem;
-            --text-body-1: 1.0625rem;
-            --text-body-2: 0.9375rem;
-            --text-label-1: 0.9375rem;
-            --text-label-2: 0.8125rem;
-            --text-caption-1: 0.8125rem;
-            --text-caption-2: 0.6875rem;
-        }
-    }
     /*</editor-fold>*/
 
     /*<editor-fold desc="Loading Animation">*/
@@ -748,7 +734,6 @@
 }
 
 :root {
-
     /*<editor-fold desc="Color Definitions">*/
 
     /*<editor-fold desc="Core Colors">*/
@@ -1323,12 +1308,10 @@
     /*</editor-fold>*/
 
     /*</editor-fold> End Color Definitions*/
-
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-
         /*<editor-fold desc="Color Definitions">*/
 
         /*<editor-fold desc="global">*/
@@ -1643,18 +1626,40 @@
         /*</editor-fold>*/
 
         /*</editor-fold> End Color Definitions*/
+    }
+}
 
+@media (max-width: 599px) {
+    :root {
+        --text-huge-display: 3rem;
+        --text-huge-display--line-height: 3rem;
+        --text-title-3: 1.1875rem;
+        --text-headline: 1.0625rem;
+        --text-body-1: 1.0625rem;
+        --text-body-2: 0.9375rem;
+        --text-label-1: 0.9375rem;
+        --text-label-2: 0.8125rem;
+        --text-caption-1: 0.8125rem;
+        --text-caption-2: 0.6875rem;
     }
 }
 
 @layer base {
     /* ===== Scrollbar styles ===== */
-    button, html, input, select {
+    button,
+    html,
+    input,
+    select {
         @apply font-sans;
     }
 
-    h1, h2, h3, h4, h5, h6 {
-        margin: 1em 0 .5em
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 1em 0 0.5em;
     }
 
     h1 {

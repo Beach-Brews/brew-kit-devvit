@@ -5,7 +5,6 @@
  * License: BSD-3-Clause
  */
 
-
 import { DesignLanguagePage } from './DesignLanguagePage';
 import { Toaster } from '@brew-kit/devvit/client';
 

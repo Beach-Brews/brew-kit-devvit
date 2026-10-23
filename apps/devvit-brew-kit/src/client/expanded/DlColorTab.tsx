@@ -37,9 +37,7 @@ export const DlColorItem = ({ color }: { color: string }) => {
             onDoubleClick={copyValue}
         >
             <div
-                style={
-                    { '--dl-color-item': `var(${color})` } as CSSProperties
-                }
+                style={{ '--dl-color-item': `var(${color})` } as CSSProperties}
                 className={`w-full h-6 rounded-t-lg bg-(--dl-color-item)`}
             ></div>
             <div className="flex flex-col gap-2 p-2 justify-between">
@@ -53,69 +51,93 @@ export const DlColorItem = ({ color }: { color: string }) => {
 export const DlColorGrid = ({ colors }: { colors: string[] }) => {
     return (
         <div className="grid grid-cols-1 md:grid-cols-6 justify-between gap-4">
-            {colors.map((c,i) => <DlColorItem color={c} key={i} />)}
+            {colors.map((c, i) => (
+                <DlColorItem color={c} key={i} />
+            ))}
         </div>
+    );
+};
+
+export const DlColorScaleItem = ({
+    color,
+    style,
+}: {
+    color: string;
+    style: number;
+}) => {
+    const value =
+        window
+            .getComputedStyle(document.documentElement)
+            ?.getPropertyValue(color)
+            .trim() ?? color.substring(2);
+    const [debouncedCopy] = useDebounce((v: string) => copyToClipboard(v), 250);
+    const copyStyle = (e: MouseEvent<HTMLDivElement>) => {
+        debouncedCopy(e.ctrlKey ? value : color.substring(2));
+    };
+    const copyValue = () => {
+        debouncedCopy(value);
+    };
+    return (
+        <div
+            onClick={copyStyle}
+            onDoubleClick={copyValue}
+            className={`w-full h-6 bg-(--dl-color-item) cursor-pointer hover:ring hover:z-100 hover:ring-white ${style == 1 ? 'rounded-t-lg md:rounded-tr-none md:rounded-l-lg' : style == -1 ? 'rounded-b-lg md:rounded-bl-none md:rounded-r-lg' : ''}`}
+            title={color.substring(2) + ' - ' + value}
+            style={
+                {
+                    '--dl-color-item': `var(${color})`,
+                } as CSSProperties
+            }
+        ></div>
     );
 };
 
 export const DlColorScale = ({ prefix }: { prefix: string }) => {
     const colors = [...window.getComputedStyle(document.documentElement)]
-        .filter(s => s.indexOf('--' + prefix) == 0)
-        .sort((a, b) => parseInt(a.substring(a.lastIndexOf('-')+1)) - parseInt(b.substring(b.lastIndexOf('-')+1)));
+        .filter((s) => s.indexOf('--' + prefix) == 0)
+        .sort(
+            (a, b) =>
+                parseInt(a.substring(a.lastIndexOf('-') + 1)) -
+                parseInt(b.substring(b.lastIndexOf('-') + 1))
+        );
     return (
         <div className="flex flex-row md:flex-col gap-2 md:gap-0">
             <div className="flex flex-col w-25 md:flex-row md:w-full border-1 border-neutral-border rounded-lg relative">
-                {colors.map((c,i) => {
-                    const value =
-                        window
-                            .getComputedStyle(document.documentElement)
-                            ?.getPropertyValue(c)
-                            .trim() ?? c.substring(2);
-                    const [debouncedCopy] = useDebounce((v: string) => copyToClipboard(v), 250);
-                    const copyStyle = (e: MouseEvent<HTMLDivElement>) => {
-                        debouncedCopy(e.ctrlKey ? value : c.substring(2));
-                    };
-                    const copyValue = () => {
-                        debouncedCopy(value);
-                    };
-                    return (
-                        <div
-                            onClick={copyStyle}
-                            onDoubleClick={copyValue}
-                            key={i}
-                            className={`w-full h-6 bg-(--dl-color-item) cursor-pointer hover:ring hover:z-100 hover:ring-white ${i == 0 ? 'rounded-t-lg md:rounded-tr-none md:rounded-l-lg' : (i == colors.length-1 ? 'rounded-b-lg md:rounded-bl-none md:rounded-r-lg' : '')}`}
-                            title={c.substring(2) + ' - ' + value}
-                            style={
-                                {'--dl-color-item': `var(${c})`} as CSSProperties
-                            }
-                        >
-                        </div>
-                    );
-                })}
+                {colors.map((c, i) => (
+                    <DlColorScaleItem
+                        key={i}
+                        color={c}
+                        style={i == 0 ? 1 : i == colors.length - 1 ? -1 : 0}
+                    />
+                ))}
             </div>
             <div className="flex flex-col md:flex-row">
-                {colors.map((c,i) => <span className="w-full text-center" key={i}>{c.substring(c.lastIndexOf('-')+1)}</span>)}
+                {colors.map((c, i) => (
+                    <span className="w-full text-center" key={i}>
+                        {c.substring(c.lastIndexOf('-') + 1)}
+                    </span>
+                ))}
             </div>
         </div>
     );
 };
 
 const scaleColorsMap = {
-    "CoolGray": "coolgray",
-    "PureGray": "puregray",
-    "OrangeRed": "orangered",
-    "Red": "red",
-    "SakuraPink": "sakurapink",
-    "BerryPurple": "berrypurple",
-    "Periwinkle": "periwinkle",
-    "AlienBlue": "alienblue",
-    "LightBlue": "lightblue",
-    "MintGreen": "mintgreen",
-    "KiwiGreen": "kiwigreen",
-    "Lime": "lime",
-    "Yellow": "yellow-",
-    "YellowOrange": "yelloworange",
-    "Brown": "brown"
+    'CoolGray': 'coolgray',
+    'PureGray': 'puregray',
+    'OrangeRed': 'orangered',
+    'Red': 'red',
+    'SakuraPink': 'sakurapink',
+    'BerryPurple': 'berrypurple',
+    'Periwinkle': 'periwinkle',
+    'AlienBlue': 'alienblue',
+    'LightBlue': 'lightblue',
+    'MintGreen': 'mintgreen',
+    'KiwiGreen': 'kiwigreen',
+    'Lime': 'lime',
+    'Yellow': 'yellow-',
+    'YellowOrange': 'yelloworange',
+    'Brown': 'brown',
 };
 
 const gridColorMap = {
@@ -447,9 +469,10 @@ export const DlColorTab = () => {
         <div className="flex flex-col gap-4">
             <h1>Colors</h1>
             <BannerMessage type="plain">
-                Click color to copy color name. Ctrl + click or double-click to copy HEX value.
+                Click color to copy color name. Ctrl + click or double-click to
+                copy HEX value.
             </BannerMessage>
-            {Object.entries(scaleColorsMap).map(([t,c], i) => {
+            {Object.entries(scaleColorsMap).map(([t, c], i) => {
                 return (
                     <>
                         <h2 key={i}>{t}</h2>
@@ -457,7 +480,7 @@ export const DlColorTab = () => {
                     </>
                 );
             })}
-            {Object.entries(gridColorMap).map(([t,c], i) => {
+            {Object.entries(gridColorMap).map(([t, c], i) => {
                 return (
                     <>
                         <h2 key={i}>{t}</h2>
