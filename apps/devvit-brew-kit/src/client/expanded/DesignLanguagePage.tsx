@@ -11,6 +11,7 @@ import { TabGroup } from '@brew-kit/devvit/client';
 import { DlColorTab } from './DlColorTab';
 import { DlBannersTab } from './DlBannersTab';
 import { DlToastsTab } from './DlToastsTab';
+import { DlTypographyTab } from './DlTypographyTab';
 
 export const TempTab = () => {
     return <div>Placeholder for the time being.</div>;
@@ -80,7 +81,7 @@ export const DesignLanguagePage = () => {
             <TabGroup
                 tabs={{
                     'Colors': <DlColorTab />,
-                    //'Typography': <TempTab />,
+                    'Typography': <DlTypographyTab />,
                     //'Buttons': <TempTab />,
                     //'Forms': <TempTab />,
                     //'Tables': <TempTab />,
