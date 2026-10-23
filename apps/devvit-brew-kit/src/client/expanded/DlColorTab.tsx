@@ -6,7 +6,16 @@
  */
 
 import type { CSSProperties, MouseEvent } from 'react';
-import { BannerMessage, toast } from '@brew-kit/devvit/client';
+import { BannerMessage, toast, useDebounce } from '@brew-kit/devvit/client';
+
+const copyToClipboard = async (copyValue: string) => {
+    try {
+        await navigator.clipboard.writeText(copyValue);
+        toast.success(`Copied to "${copyValue}" to clipboard.`);
+    } catch (e) {
+        toast.danger(`Could not add "${copyValue}" to clipboard.`);
+    }
+};
 
 export const DlColorItem = ({ color }: { color: string }) => {
     const value =
@@ -14,19 +23,18 @@ export const DlColorItem = ({ color }: { color: string }) => {
             .getComputedStyle(document.documentElement)
             ?.getPropertyValue(color)
             .trim() ?? color.substring(2);
-    const copyStyle = async (e: MouseEvent<HTMLDivElement>) => {
-        const copyValue = e.ctrlKey ? value : color.substring(2);
-        try {
-            await navigator.clipboard.writeText(copyValue);
-            toast.success(`Copied to "${copyValue}" to clipboard.`);
-        } catch (e) {
-            toast.danger(`Could not add "${copyValue}" to clipboard.`);
-        }
+    const [debouncedCopy] = useDebounce((v: string) => copyToClipboard(v), 250);
+    const copyStyle = (e: MouseEvent<HTMLDivElement>) => {
+        debouncedCopy(e.ctrlKey ? value : color.substring(2));
+    };
+    const copyValue = () => {
+        debouncedCopy(value);
     };
     return (
         <div
             className="w-full border border-neutral-border rounded-lg cursor-pointer"
             onClick={copyStyle}
+            onDoubleClick={copyValue}
         >
             <div
                 style={
@@ -63,18 +71,17 @@ export const DlColorScale = ({ prefix }: { prefix: string }) => {
                             .getComputedStyle(document.documentElement)
                             ?.getPropertyValue(c)
                             .trim() ?? c.substring(2);
-                    const copyStyle = async (e: MouseEvent<HTMLDivElement>) => {
-                        const copyValue = e.ctrlKey ? value : c.substring(2);
-                        try {
-                            await navigator.clipboard.writeText(copyValue);
-                            toast.success(`Copied to "${copyValue}" to clipboard.`);
-                        } catch (e) {
-                            toast.danger(`Could not add "${copyValue}" to clipboard.`);
-                        }
+                    const [debouncedCopy] = useDebounce((v: string) => copyToClipboard(v), 250);
+                    const copyStyle = (e: MouseEvent<HTMLDivElement>) => {
+                        debouncedCopy(e.ctrlKey ? value : c.substring(2));
+                    };
+                    const copyValue = () => {
+                        debouncedCopy(value);
                     };
                     return (
                         <div
                             onClick={copyStyle}
+                            onDoubleClick={copyValue}
                             key={i}
                             className={`w-full h-6 bg-(--dl-color-item) cursor-pointer hover:ring hover:z-100 hover:ring-white ${i == 0 ? 'rounded-t-lg md:rounded-tr-none md:rounded-l-lg' : (i == colors.length-1 ? 'rounded-b-lg md:rounded-bl-none md:rounded-r-lg' : '')}`}
                             title={c.substring(2) + ' - ' + value}
@@ -440,7 +447,7 @@ export const DlColorTab = () => {
         <div className="flex flex-col gap-4">
             <h1>Colors</h1>
             <BannerMessage type="plain">
-                Click color to copy color name. Ctrl + click to copy HEX value.
+                Click color to copy color name. Ctrl + click or double-click to copy HEX value.
             </BannerMessage>
             {Object.entries(scaleColorsMap).map(([t,c], i) => {
                 return (

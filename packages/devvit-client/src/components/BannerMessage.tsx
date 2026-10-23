@@ -46,11 +46,11 @@ export const BannerMessage = ({
     const typeStyle = {
         danger: {
             style: 'bg-banner-error text-banner-error-text',
-            icon: <ExclamationCircleIcon className="size-6" />,
+            icon: <ExclamationTriangleIcon className="size-6" />,
         },
         caution: {
             style: 'bg-banner-caution text-banner-caution-text',
-            icon: <ExclamationTriangleIcon className="size-6" />,
+            icon: <ExclamationCircleIcon className="size-6" />,
         },
         plain: {
             style: 'bg-banner-plain text-banner-plain-text border border-neutral-border',
@@ -71,7 +71,7 @@ export const BannerMessage = ({
     }[type];
 
     return (
-        <div className={`flex items-center gap-2 px-4 py-2 rounded-full ${typeStyle.style}`}>
+        <div className={`flex items-center gap-2 px-4 py-2 rounded-2xl ${typeStyle.style}`}>
             {!hideIcon && typeStyle.icon}
             <div className="flex-1">{children}</div>
             {dismissable && (
